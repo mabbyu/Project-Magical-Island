@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NpcLeak
+  m_Controller: {fileID: 9100000, guid: cf68928e75486be478701d47b62ccb03, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: bb8ba559e492f0c408cbdfb661815080, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0af1c3223d5b21d4bb4fbaf035fef224, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c1999eb1eeaf4634d95b1e5f221e05a9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 25b60ca1f5435dc4484b2b1b121189f0, type: 2}

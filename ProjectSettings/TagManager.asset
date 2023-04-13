@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Rope
+  - Ground
+  - Hole
+  - Npc
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - Ground
+  - Rope
+  - Enemy
+  - Hole
+  - Npc
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 1685501555
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 2772571229
+    locked: 0
+  - name: Hole
+    uniqueID: 1260605621
+    locked: 0
+  - name: Obstacle
+    uniqueID: 2448393629
+    locked: 0
+  - name: Rope
+    uniqueID: 3769040925
+    locked: 0
+  - name: NPC
+    uniqueID: 2494967065
+    locked: 0
+  - name: Player
+    uniqueID: 3917772793
+    locked: 0
