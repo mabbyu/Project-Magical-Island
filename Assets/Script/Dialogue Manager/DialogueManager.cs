@@ -11,10 +11,8 @@ public class DialogueManager : MonoBehaviour
     public bool isDialogue;
     private Queue<string> sentences;
 
-    //public GameObject player;
-
-    //public float typeSpeed;
-    //float ts;
+    public float typeSpeed;
+    float ts;
 
     public static DialogueManager instance;
     private void Awake()
@@ -26,12 +24,12 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<string>();
     }
-    /*
+    
     private void Update()
     {
         ts -= Time.deltaTime;
     }
-    */
+    
     public void StartDialogue(Dialogue dialogue)
     {
         MenuManager.instance.SetTimeScale(0);
@@ -77,8 +75,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return null;
-            //yield return new WaitForSeconds(typeSpeed);
+            yield return new WaitForSeconds(typeSpeed);
         }
         MenuManager.instance.buttonDialoguePanel.gameObject.SetActive(true);
     }

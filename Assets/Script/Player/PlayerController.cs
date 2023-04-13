@@ -84,8 +84,17 @@ public class PlayerController : MonoBehaviour
         CheckInput();
         Move();
 
-        if (isGrounded)
-            canMove = true;
+
+
+        if (DialogueManager.instance.isDialogue)
+        {
+            canMove = false;
+        }
+        else
+        {
+            if (isGrounded)
+                canMove = true;
+        }
 
         if (canWallSlide)
         {
@@ -211,6 +220,8 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        if (DialogueManager.instance.isDialogue)
+            return;
         rb.velocity = new Vector2(rb.velocity.x, jumpForce) * Time.timeScale;
     }
 
@@ -275,11 +286,10 @@ public class PlayerController : MonoBehaviour
         }
 
         anim.SetFloat("yVelocity", rb.velocity.y);
-        anim.SetBool("isMoving", isMoving);
+        anim.SetBool("isMoving", DialogueManager.instance.isDialogue? false: isMoving);
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isWallSliding", isWallSliding);
         anim.SetBool("isWallDetected", isWallDetected);
-        //anim.SetBool("isRopeDetected", isRopeDetected);
     }
 
     private void CollisionCheck()

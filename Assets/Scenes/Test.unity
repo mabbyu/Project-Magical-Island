@@ -3194,6 +3194,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5460005765769704238, guid: 7caaeb1c1d59a97459d18af5f469d5e0, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460005765769704239, guid: 7caaeb1c1d59a97459d18af5f469d5e0, type: 3}
+      propertyPath: playerAlive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7101,6 +7105,7 @@ MonoBehaviour:
   playerNameText: {fileID: 1217110715}
   dialogueText: {fileID: 1833560102}
   isDialogue: 0
+  typeSpeed: 0
 --- !u!4 &2145123530
 Transform:
   m_ObjectHideFlags: 0
