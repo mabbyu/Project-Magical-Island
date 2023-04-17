@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         health = 3;
-        GameManager.instance.playerAlive = true;
+        //GameManager.instance.playerAlive = true;
     }
 
     void Update()
@@ -84,10 +84,9 @@ public class PlayerController : MonoBehaviour
         CheckInput();
         Move();
 
-
-
         if (DialogueManager.instance.isDialogue)
         {
+            rb.velocity = Vector2.zero;
             canMove = false;
         }
         else

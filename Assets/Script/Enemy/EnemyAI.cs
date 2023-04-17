@@ -81,10 +81,6 @@ public class EnemyAI : MonoBehaviour
 
         rb.AddForce(force);
 
-        //transform.position = Vector2.MoveTowards(transform.position, ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized, speed * Time.deltaTime);
-
-        //rb.transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
         if (distance < nextWaypointDistance)
@@ -92,31 +88,10 @@ public class EnemyAI : MonoBehaviour
 
         //EnemyGFX
         if (force.x >= 0.01f)
-        {
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
-        }
         else if (force.x <= -0.01f)
-        {
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
-        }
-
-        /*
-        //EnemyGFX
-        if (transform.position.x - transform.position.x < 0 && facingRight)
-            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
-        else if (transform.position.x - transform.position.x > 0 && !facingRight)
-            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
-        */
     }
-    /*
-    public void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-    }
-    */
     public void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, maximunDistanceToPlayer);

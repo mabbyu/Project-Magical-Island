@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
     
     public void StartDialogue(Dialogue dialogue)
     {
-        MenuManager.instance.SetTimeScale(0);
+        //MenuManager.instance.SetTimeScale(0);
         isDialogue = true;
         npcNameText.gameObject.SetActive(true);
         playerNameText.gameObject.SetActive(false);
@@ -83,7 +83,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         FindObjectOfType<DialogTrigger>().interactPanel.gameObject.SetActive(false);
-        MenuManager.instance.SetTimeScale(1);
+        //MenuManager.instance.SetTimeScale(1);
         isDialogue = false;
     }
 }

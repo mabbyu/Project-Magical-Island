@@ -93,9 +93,7 @@ public class EnemyAI_Ahool : EnemyAI
                 sTime -= Time.deltaTime;
                 
                 if (dist <= 2 || sTime <= 0)
-                {
                     StartCoroutine(BackPosCd());
-                }
             }
         }
     }
@@ -118,10 +116,6 @@ public class EnemyAI_Ahool : EnemyAI
 
         rb.AddForce(force);
 
-        //transform.position = Vector2.MoveTowards(transform.position, path.vectorPath[currentWaypoint], speed * Time.deltaTime);
-
-        //transform.position = Vector2.MoveTowards(transform.position, ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized, speed * Time.deltaTime);
-
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
         if (distance < nextWaypointDistance)
@@ -129,13 +123,9 @@ public class EnemyAI_Ahool : EnemyAI
 
         //EnemyGFX
         if (force.x >= 0.01f)
-        {
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
-        }
         else if (force.x <= -0.01f)
-        {
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
-        }
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, flyHigh, layerMaskToFly);
         
@@ -144,11 +134,8 @@ public class EnemyAI_Ahool : EnemyAI
             if (hit.collider)
             {
                 if (hit.transform.tag == "Ground")
-                {
                     rb.AddForce(Vector2.up * flyForce);
-                }
             }
-            
         }
     }
 
