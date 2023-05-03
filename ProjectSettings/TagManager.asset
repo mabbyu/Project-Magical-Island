@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Hole
   - Npc
+  - TpToTemple
   layers:
   - Default
   - TransparentFX

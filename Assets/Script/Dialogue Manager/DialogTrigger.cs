@@ -8,6 +8,7 @@ public class DialogTrigger : MonoBehaviour
     public Dialogue dialogue;
     public Text interactText;
     public GameObject interactPanel;
+    public GameObject npcSprite;
 
     public bool interactAllowed;
 
@@ -19,13 +20,11 @@ public class DialogTrigger : MonoBehaviour
 
     private void Update()
     {
-       
-
         if (!DialogueManager.instance.isDialogue)
         {
             if (interactAllowed && Input.GetKeyDown(KeyCode.E))
                 Interact();
-        }  
+        }
     }
 
     public void TriggerDialogue()

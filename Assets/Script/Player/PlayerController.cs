@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float ropeCheckDistance;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private LayerMask whatIsRope;
+    [SerializeField] private GameObject tpPointToTemple;
     private bool isGrounded;
     private bool wasGrounded = false;
     private bool isWallDetected;
@@ -315,7 +316,6 @@ public class PlayerController : MonoBehaviour
             isRope = false;
         }
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + wallCheckDistance * facingDirection, transform.position.y));
@@ -329,6 +329,12 @@ public class PlayerController : MonoBehaviour
         {
             GetDamage();
             transform.position = beforeFalling.transform.position;
+        }
+
+        if (cld_trggr.gameObject.name.Equals("Tp point to temple"))
+        {
+            Debug.Log("tp");
+            StartCoroutine(TpCd());
         }
     }
     private void OnTriggerStay2D(Collider2D cld_trggr)
@@ -349,7 +355,6 @@ public class PlayerController : MonoBehaviour
             //GetDamage();
         }
     }
-
     IEnumerator FallCd()
     {
         yield return new WaitForSeconds(0.00001f);
@@ -358,14 +363,12 @@ public class PlayerController : MonoBehaviour
         startOfFall = 0;
         trueFalling = false;
     }
-
     IEnumerator HealthEmpty()
     {
         yield return new WaitForSeconds(0.1f);
         gameObject.SetActive(false);
         GameManager.instance.playerAlive = false;
     }
-
     IEnumerator GetHurt()
     {
         Physics2D.IgnoreLayerCollision(3,8);
@@ -376,5 +379,10 @@ public class PlayerController : MonoBehaviour
         GetComponent<Animator>().SetLayerWeight(1, 0);
         Physics2D.IgnoreLayerCollision(3, 8, false);
         isHurt = false;
+    }
+    IEnumerator TpCd()
+    {
+        yield return new WaitForSeconds(2f);
+        transform.position = new Vector2(tpPointToTemple.transform.position.x, tpPointToTemple.transform.position.y);
     }
 }

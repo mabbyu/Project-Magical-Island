@@ -175,7 +175,6 @@ public class EnemyAI_Leak : EnemyAI
                     rb.AddForce(Vector2.up * flyForce);
                 }
             }
-
         }
     }
 

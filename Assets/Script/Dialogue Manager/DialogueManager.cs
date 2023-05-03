@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public Text playerNameText;
     public Text dialogueText;
     public bool isDialogue;
+    public bool canDialogue;
     private Queue<string> sentences;
 
     public float typeSpeed;
@@ -23,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+        canDialogue = true;
     }
     
     private void Update()
@@ -80,10 +82,11 @@ public class DialogueManager : MonoBehaviour
         MenuManager.instance.buttonDialoguePanel.gameObject.SetActive(true);
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         FindObjectOfType<DialogTrigger>().interactPanel.gameObject.SetActive(false);
         //MenuManager.instance.SetTimeScale(1);
         isDialogue = false;
+        canDialogue = false;
     }
 }
