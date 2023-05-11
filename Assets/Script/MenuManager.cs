@@ -11,6 +11,17 @@ public class MenuManager : MonoBehaviour
     /*-------------------------------------------------------------*/
     [Header("Main Menu")]
     [SerializeField] private bool isMenu;
+    [SerializeField] private bool isMainMenu;
+    public GameObject mainPanel;
+    /*-------------------------------------------------------------*/
+    [Header("Credit Information")]
+    public GameObject informationPanel;
+    /*-------------------------------------------------------------*/
+    [Header("Credit Panel")]
+    public GameObject creditPanel;
+    /*-------------------------------------------------------------*/
+    [Header("Options Panel")]
+    public GameObject optionsPanel;
     /*-------------------------------------------------------------*/
     [Header("Game Pause")]
     public GameObject pauseMenu;
@@ -46,7 +57,11 @@ public class MenuManager : MonoBehaviour
     {
         if (isMenu)
         {
-
+            if (Input.GetButtonDown("Pause"))
+            {
+                if (isMainMenu == false)
+                    TheMainMenu();
+            }
         }
         else
         {
@@ -89,7 +104,61 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = value;
     }
 
-    //Paused
+    //Main Menu
+    public void NotMainMenu()
+    {
+        isMainMenu = false;
+
+        if (mainPanel)
+            mainPanel.SetActive(false);
+    }
+
+    public void TheMainMenu()
+    {
+        isMainMenu = true;
+
+        if (mainPanel)
+        {
+            mainPanel.SetActive(true);
+
+            informationPanel.SetActive(false);
+            creditPanel.SetActive(false);
+            optionsPanel.SetActive(false);
+        }
+    }
+    public void ButtonInformation()
+    {
+        NotMainMenu();
+
+        if (informationPanel)
+            informationPanel.SetActive(true);
+    }
+    
+    public void ButtonInformationNext()
+    {
+
+    }
+
+
+
+    public void ButtonCredit()
+    {
+        NotMainMenu();
+
+        if (creditPanel)
+            creditPanel.SetActive(true);
+    }
+
+    public void ButtonOptions()
+    {
+        NotMainMenu();
+
+        if (optionsPanel)
+            optionsPanel.SetActive(true);
+    }
+
+
+    //Paused in Game
     public void GamePause()
     {
         isPaused = true;
@@ -139,9 +208,8 @@ public class MenuManager : MonoBehaviour
 
         if (dialoguePanel)
             dialoguePanel.SetActive(true);
-
-        EventSystem.current.SetSelectedGameObject(buttonDialoguePanel);
         
+        EventSystem.current.SetSelectedGameObject(buttonDialoguePanel);
     }
 
     //application

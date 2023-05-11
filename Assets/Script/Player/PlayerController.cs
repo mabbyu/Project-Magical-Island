@@ -8,6 +8,11 @@ public class PlayerController : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb;
+    public static PlayerController instance;
+
+    [Header("Cameras")]
+    public GameObject mainCamera;
+    public GameObject templeCamera;
     /*-------------------------------------------------------------*/
     [Header("Move info")]
     [SerializeField] public float speed = 5;
@@ -18,6 +23,11 @@ public class PlayerController : MonoBehaviour
     public float verticalInput;
     private bool facingRight = true;
     public bool canMove = true;
+    [Header("SFX")]
+    public GameObject stepAudio;
+    public GameObject jumpAudio;
+    public GameObject hitAudio;
+    public GameObject taliAudio;
     /*-------------------------------------------------------------*/
     [Header("Animation")]
     public bool isMoving;
@@ -26,11 +36,13 @@ public class PlayerController : MonoBehaviour
     private bool canWallSlide;
     private bool isWallSliding;
     [SerializeField] private Vector2 wallJumpDirection;
+    public bool wallJump;
     /*-------------------------------------------------------------*/
     [Header("Rope")]
     [SerializeField] private Vector2 ropeJumpDirection;
     private bool canRope;
     private bool isRope;
+    private bool isClimb;
     /*-------------------------------------------------------------*/
     [Header("Collision info")]
     [SerializeField] private float groundCheckDistance;
@@ -38,7 +50,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float ropeCheckDistance;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private LayerMask whatIsRope;
-    [SerializeField] private GameObject tpPointToTemple;
     private bool isGrounded;
     private bool wasGrounded = false;
     private bool isWallDetected;
@@ -67,8 +78,20 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        templeCamera.SetActive(false);
+
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        AudioSFX();
+    }
+
+    private void AudioSFX()
+    {
+        stepAudio.SetActive(false);
+        jumpAudio.SetActive(false);
+        hitAudio.SetActive(false);
+        taliAudio.SetActive(false);
     }
 
     private void Awake()
@@ -85,7 +108,7 @@ public class PlayerController : MonoBehaviour
         CheckInput();
         Move();
 
-        if (DialogueManager.instance.isDialogue)
+        if (DialogueDisplay.instance.isDialogue)
         {
             rb.velocity = Vector2.zero;
             canMove = false;
@@ -93,37 +116,63 @@ public class PlayerController : MonoBehaviour
         else
         {
             if (isGrounded)
+            {
                 canMove = true;
+                isClimb =false;
+            }
         }
 
         if (canWallSlide)
         {
             isWallSliding = true;
+            wallJump = false;
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.1f);
         }
         
         if (canRope)
         {
             isRope = true;
+            isClimb = false;
             rb.velocity = new Vector2(rb.velocity.x, y: ropingSpeed * verticalInput);
             rb.gravityScale = 0;
 
             if (verticalInput < 0)
+            {
+                isClimb = true;
                 ropingSpeed = 8;
+            }
+            else if (verticalInput == 0)
+                isClimb = false;
             else
+            {
+                isClimb = true;
                 ropingSpeed = 4;
-          
+            }
         }
         else
-        {
             rb.gravityScale = 4;
-        }
         
         //heart
         foreach (Image img in hearts)
             img.sprite = emptyHeart;
         for (int i = 0;  i < health; i++)
             hearts[i].sprite = fullHeart;
+
+        //sfx
+        if (isMoving && canMove && isGrounded)
+            stepAudio.SetActive(true);
+        else
+            stepAudio.SetActive(false);
+
+        if (rb.velocity.y > 0)
+            jumpAudio.SetActive(true);
+        else
+            jumpAudio.SetActive(false);
+
+        if (isClimb)
+            taliAudio.SetActive(true);
+        else
+            taliAudio.SetActive(false);
     }
     
     private void FixedUpdate()
@@ -140,11 +189,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(FallCd());
 
         if (isWallDetected || isRopeDetected)
-            startOfFall = 0;  
+            startOfFall = 0;
 
         isGrounded = wasGrounded;
         isFalling = wasFalling;
-
     }
 
     private void LateUpdate()
@@ -164,7 +212,6 @@ public class PlayerController : MonoBehaviour
 
         if (fallDistance > minimumFall)
             trueFalling = true;
-            //Debug.Log("jatoh" + (startOfFall - transform.position.y) + "distance");
         else
             trueFalling = false;
     }
@@ -211,22 +258,30 @@ public class PlayerController : MonoBehaviour
         if (isWallSliding)
             WallJump();
         else if (isRope)
+        {
+            wallJump = false;
             RopeJump();
+        }
         else if (isGrounded)
+        {
+            wallJump = false;
             Jump();
+        }
 
         canWallSlide = false;
+        canRope = false;
     }
 
     private void Jump()
     {
-        if (DialogueManager.instance.isDialogue)
+        if (DialogueDisplay.instance.isDialogue)
             return;
         rb.velocity = new Vector2(rb.velocity.x, jumpForce) * Time.timeScale;
     }
 
     private void WallJump()
     {
+        wallJump = true;
         canMove = false;
         rb.velocity = new Vector2(wallJumpDirection.x * -facingDirection, wallJumpDirection.y) * Time.timeScale;
     }
@@ -254,6 +309,8 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(HealthEmpty());
         else
             StartCoroutine(GetHurt());
+
+        hitAudio.SetActive(true);
     }
     
     private void FlipController()
@@ -286,10 +343,14 @@ public class PlayerController : MonoBehaviour
         }
 
         anim.SetFloat("yVelocity", rb.velocity.y);
-        anim.SetBool("isMoving", DialogueManager.instance.isDialogue? false: isMoving);
+        anim.SetBool("isMoving", DialogueDisplay.instance.isDialogue? false: isMoving);
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isWallSliding", isWallSliding);
+        anim.SetBool("isWallJump", wallJump);
+        anim.SetBool("isRope", isRope);
+        anim.SetBool("isClimb", isClimb);
         anim.SetBool("isWallDetected", isWallDetected);
+        anim.SetBool("isRopeDetected", isRopeDetected);
     }
 
     private void CollisionCheck()
@@ -333,8 +394,8 @@ public class PlayerController : MonoBehaviour
 
         if (cld_trggr.gameObject.name.Equals("Tp point to temple"))
         {
-            Debug.Log("tp");
-            StartCoroutine(TpCd());
+            mainCamera.SetActive(false);
+            templeCamera.SetActive(true);
         }
     }
     private void OnTriggerStay2D(Collider2D cld_trggr)
@@ -344,7 +405,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D cld_trggr)
     {
-        
+        if (cld_trggr.gameObject.name.Equals("Tp point to temple"))
+        {
+            mainCamera.SetActive(true);
+            templeCamera.SetActive(false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D cls)
@@ -352,7 +417,7 @@ public class PlayerController : MonoBehaviour
         if (cls.transform.tag == "Enemy")
         {
             Debug.Log("kena damage");
-            //GetDamage();
+            GetDamage();
         }
     }
     IEnumerator FallCd()
@@ -379,10 +444,5 @@ public class PlayerController : MonoBehaviour
         GetComponent<Animator>().SetLayerWeight(1, 0);
         Physics2D.IgnoreLayerCollision(3, 8, false);
         isHurt = false;
-    }
-    IEnumerator TpCd()
-    {
-        yield return new WaitForSeconds(2f);
-        transform.position = new Vector2(tpPointToTemple.transform.position.x, tpPointToTemple.transform.position.y);
     }
 }

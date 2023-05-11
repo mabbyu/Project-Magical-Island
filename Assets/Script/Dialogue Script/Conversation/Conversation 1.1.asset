@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ec79479448a044ab845b9dbd2a4d29, type: 3}
+  m_Name: Conversation 1.1
+  m_EditorClassIdentifier: 
+  speakerLeft: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+  speakerRight: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Selamat datang
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Kamu siapa? aku dimana?
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Aku huggins, salah satu makhluk penghuni pulau ini, saat ini kamu berada
+      di Magical Island
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Kamu secara tidak sengaja melakukan perjalan waktu dan sampai pada tempat
+      ini
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Ini bukan tempat seharusnya aku berada, aku harus kembali ke tempatku sebelumnya
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Aku bisa membantu mu untuk kembali pulang, akan tetapi kamu harus mengumpul
+      beberapa barang untuk dapat kembali ke tempatku sebelumnya
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Aku bisa membantu mu untuk kembali pulang, akan tetapi kamu harus mengumpul
+      beberapa barang untuk dapat kembali ke tempatku sebelumnya
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Aku bisa membantu mu untuk kembali pulang, akan tetapi kamu harus mengumpul
+      beberapa barang untuk dapat kembali ke tempatmu sebelumnya
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Setiap barang yang harus dikumpulkan berada didalam candi yang berbeda
+      dan dijaga oleh makhluk penunggu candi, tetapi tidak akan mudah untuk kamu
+      mengumpulkannya karena akan melalui berbagai rintangan
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Setelah kamu berhasil mengumpulakan 3 barang itu kamu dapat kembali pulang
+      ke tempatmu berasal
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Baiklah kalau begitu aku akan mulai dengan patung angsa dimana aku bisa
+      mendapatkannya?
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Ikuti jalan ini hingga kamu menemukan sebuah candi, lalu masuk kedalamnya
+      dan disitulah patung angsa itu berada
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Baik

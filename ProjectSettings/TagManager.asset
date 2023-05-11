@@ -10,6 +10,7 @@ TagManager:
   - Hole
   - Npc
   - TpToTemple
+  - DestroyH
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Rope
   - Enemy
   - Hole
-  - Npc
+  - Huggins
   - 
   - 
   - 
@@ -67,4 +68,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3917772793
+    locked: 0
+  - name: Huggins
+    uniqueID: 268644141
     locked: 0
