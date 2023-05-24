@@ -879,6 +879,7 @@ MonoBehaviour:
     - Dialogue 3
   interactText: {fileID: 258191360}
   interactPanel: {fileID: 1237677219}
+  npcSprite: {fileID: 0}
   interactAllowed: 0
 --- !u!4 &182132169 stripped
 Transform:
@@ -6272,7 +6273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!58 &1852474336
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6938,6 +6939,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMenu: 0
+  isMainMenu: 0
+  mainPanel: {fileID: 0}
+  informationPanel: {fileID: 0}
+  creditPanel: {fileID: 0}
+  optionsPanel: {fileID: 0}
   pauseMenu: {fileID: 1424364727}
   buttonPause: {fileID: 878721558}
   isPaused: 0
@@ -7128,10 +7134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17051380dacaa144827b9e9c07cd02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcNameText: {fileID: 1108384159}
-  playerNameText: {fileID: 1217110715}
   dialogueText: {fileID: 1833560102}
   isDialogue: 0
+  canDialogue: 0
   typeSpeed: 0
 --- !u!4 &2145123530
 Transform:

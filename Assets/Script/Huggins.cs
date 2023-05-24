@@ -11,9 +11,14 @@ public class Huggins : MonoBehaviour
 
     public Transform[] position;
     Transform nextPos;
-    int nextPosIndex;
+    public int nextPosIndex;
 
     public float flySpeed;
+
+    void Awake()
+    {
+        instance = this;    
+    }
 
     public void Start()
     {
@@ -29,17 +34,16 @@ public class Huggins : MonoBehaviour
         AnimatorController();
 
         if (isIdle)
-        {
             isFlying = false;
-            nextPosIndex++;
-            nextPos = position[nextPosIndex];
-        }
 
         if (isFlying)
             isIdle = false;
 
         if (DialogueDisplay.instance.hugginsFlying)
             MoveGameObject();
+
+        if (transform.position == nextPos.position)
+            isIdle = true;
     }
 
     public void AnimatorController()
@@ -50,19 +54,14 @@ public class Huggins : MonoBehaviour
 
     public void MoveGameObject()
     {
+        nextPos = position[nextPosIndex];
+
         if (transform.position == nextPos.position)
-            StartCoroutine(NotFly());
+            DialogueDisplay.instance.hugginsFlying = false;
         else
             transform.position = Vector2.MoveTowards(transform.position, nextPos.position, flySpeed * Time.deltaTime);
 
         isFlying = true;
         isIdle = false;
-    }
-
-   IEnumerator NotFly()
-    {
-        yield return new WaitForSeconds(0.01f);
-        isIdle = true;
-        isFlying = false;
     }
 }

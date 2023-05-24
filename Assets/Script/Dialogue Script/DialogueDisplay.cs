@@ -9,7 +9,6 @@ public class DialogueDisplay : MonoBehaviour
     public bool hugginsFlying;
 
     public GameObject theDialogue;
-    //public GameObject buttonNext;
 
     public static DialogueDisplay instance;
 
@@ -56,31 +55,40 @@ public class DialogueDisplay : MonoBehaviour
     {
         nextConversationIndex++;
         nextConversation = conversation[nextConversationIndex];
+
         speakerUILeft.Hide();
         speakerUIRight.Hide();
         isDialogue = false;
         hugginsFlying = true;
         canDialogue = true;
         theDialogue.SetActive(false);
+        Huggins.instance.nextPosIndex++;
     }
 
     public void Initialize()
     {
+        if (!canDialogue)
+            return;
+
         isDialogue = true;
+        canDialogue = false;
+        theDialogue.SetActive(true);
         activeLineIndex = 0;
         speakerUILeft.Speaker = conversation[nextConversationIndex].speakerLeft;
         speakerUIRight.Speaker = conversation[nextConversationIndex].speakerRight;
-        theDialogue.SetActive(true);
+
         AdvanceLine();
     }
 
     public void AdvanceLine()
     {
-        if (conversation == null)
+        if (conversation == null || activeLineIndex > conversation[nextConversationIndex].lines.Length)
             return;
 
         if (!isDialogue)
             Initialize();
+
+        StopAllCoroutines();
 
         if (activeLineIndex < conversation[nextConversationIndex].lines.Length)
             DisplayLine();

@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public static PlayerController instance;
 
-    [Header("Cameras")]
-    public GameObject mainCamera;
-    public GameObject templeCamera;
+    //[Header("Cameras")]
+    //public GameObject mainCamera;
+    //public GameObject templeCamera;
     /*-------------------------------------------------------------*/
     [Header("Move info")]
     [SerializeField] public float speed = 5;
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        templeCamera.SetActive(false);
+      //templeCamera.SetActive(false);
 
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         health = 3;
+        instance = this;
         //GameManager.instance.playerAlive = true;
     }
 
@@ -392,11 +393,11 @@ public class PlayerController : MonoBehaviour
             transform.position = beforeFalling.transform.position;
         }
 
-        if (cld_trggr.gameObject.name.Equals("Tp point to temple"))
+        /*if (cld_trggr.gameObject.name.Equals("Camera To Temple"))
         {
             mainCamera.SetActive(false);
             templeCamera.SetActive(true);
-        }
+        }*/
     }
     private void OnTriggerStay2D(Collider2D cld_trggr)
     {
@@ -405,11 +406,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D cld_trggr)
     {
-        if (cld_trggr.gameObject.name.Equals("Tp point to temple"))
+        /*if (cld_trggr.gameObject.name.Equals("Tp point to temple"))
         {
             mainCamera.SetActive(true);
             templeCamera.SetActive(false);
-        }
+        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D cls)
@@ -420,6 +421,7 @@ public class PlayerController : MonoBehaviour
             GetDamage();
         }
     }
+
     IEnumerator FallCd()
     {
         yield return new WaitForSeconds(0.00001f);
