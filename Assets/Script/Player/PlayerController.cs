@@ -310,8 +310,6 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(HealthEmpty());
         else
             StartCoroutine(GetHurt());
-
-        hitAudio.SetActive(true);
     }
     
     private void FlipController()
@@ -441,10 +439,12 @@ public class PlayerController : MonoBehaviour
         Physics2D.IgnoreLayerCollision(3,8);
         GetComponent<Animator>().SetLayerWeight(1, 1);
         isHurt = true;
+        hitAudio.SetActive(true);
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         GetComponent<Animator>().SetLayerWeight(1, 0);
         Physics2D.IgnoreLayerCollision(3, 8, false);
         isHurt = false;
+        hitAudio.SetActive(false);
     }
 }

@@ -12,7 +12,11 @@ public class EnemyAI_Taksaka : EnemyAI
     public float flyHigh, flyForce;
 
     public float timeToShoot = 3;
+    public float stuckChasingTime;
+
     float tShoot;
+    float scTime;
+
     public int amountBurst = 3;
     public float timeBetweenBurst;
     float tbShoot;
@@ -31,6 +35,8 @@ public class EnemyAI_Taksaka : EnemyAI
         InvokeRepeating("UpdatePath", 0f, .5f);
 
         Physics2D.IgnoreLayerCollision(8, 7, true);
+
+        scTime = stuckChasingTime;
     }
 
     private void Update()

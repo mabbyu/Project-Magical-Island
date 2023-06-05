@@ -10,11 +10,16 @@ public class EnemyAI_Ahool : EnemyAI
 
     public float attackTimeWait;
     public float stuckAttackTime;
-    
+    //public float stuckChasingTime;
+    //public float stuckChasingEndTime;
+
     float aTime;
-    float sTime;
+    float saTime;
+    //float scTime;
+    //float sceTime;
 
     Transform lastAttackPos;
+    public LayerMask layerMaskChasingStuck;
     public LayerMask layerMaskToFly;
     public float flyHigh, flyForce;
 
@@ -29,7 +34,9 @@ public class EnemyAI_Ahool : EnemyAI
 
         returnPos.transform.position = transform.position;
         aTime = attackTimeWait;
-        sTime = stuckAttackTime;
+        saTime = stuckAttackTime;
+        //scTime = stuckChasingTime;
+        //sceTime = stuckChasingEndTime;
 
         lastAttackPos = new GameObject("AttackPos").transform ;
     }
@@ -55,7 +62,21 @@ public class EnemyAI_Ahool : EnemyAI
             {
                 target = GameObject.FindGameObjectWithTag("Player").transform;
                 speed = 450;
+                /*
+                if (scTime <= 0)
+                {
+                    Physics2D.IgnoreLayerCollision(8, 6, true);
+                    sceTime -= Time.deltaTime;
+                }
 
+                if (sceTime <= 0)
+                {
+                    scTime = stuckChasingTime;
+                    sceTime = stuckChasingEndTime;
+
+                    Physics2D.IgnoreLayerCollision(8, 6, false);
+                }
+                */
                 if (dist <= maximunDistanceToPlayer)
                 {
                     currentMode = AttackMode.idle;
@@ -90,10 +111,14 @@ public class EnemyAI_Ahool : EnemyAI
                 target = lastAttackPos.transform;
                 speed = 1250;
 
-                sTime -= Time.deltaTime;
+                saTime -= Time.deltaTime;
                 
-                if (dist <= 2 || sTime <= 0)
-                    StartCoroutine(BackPosCd());
+                if (dist <= 2 || saTime <= 0)
+                {
+                    target = returnPos;
+                    saTime = stuckAttackTime;
+                }
+                    //StartCoroutine(BackPosCd());
             }
         }
     }
@@ -138,13 +163,12 @@ public class EnemyAI_Ahool : EnemyAI
             }
         }
     }
-
+    /*
     IEnumerator BackPosCd()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.25f);
         target = returnPos;
-        sTime = stuckAttackTime;
-        Debug.Log("returnPos");
-    }
+        saTime = stuckAttackTime;
+    }*/
 }
 
