@@ -25,8 +25,10 @@ public class MenuManager : MonoBehaviour
     /*-------------------------------------------------------------*/
     [Header("Game Pause")]
     public GameObject pauseMenu;
+    public GameObject pauseButtons;
     public GameObject buttonPause;
     public bool isPaused;
+    public bool isOptionsInGame;
     /*-------------------------------------------------------------*/
     [Header("Dead Panel")]
     public GameObject deadPanel;
@@ -77,13 +79,17 @@ public class MenuManager : MonoBehaviour
                 //    DonePanel();
 
                 if (dialoguePanel.activeSelf)
-                {
                     DialoguePanel();
-                }
 
                 if (Input.GetButtonDown("Pause"))
                 {
-                    if (isPaused)
+                    if (isPaused && isOptionsInGame)
+                    {
+                        isOptionsInGame = false;
+                        pauseButtons.SetActive(true);
+                        optionsPanel.SetActive(false);
+                    }
+                    else if (isPaused)
                         GameUnPause();
                     else
                         GamePause();
@@ -133,13 +139,6 @@ public class MenuManager : MonoBehaviour
         if (informationPanel)
             informationPanel.SetActive(true);
     }
-    
-    public void ButtonInformationNext()
-    {
-
-    }
-
-
 
     public void ButtonCredit()
     {
@@ -162,6 +161,7 @@ public class MenuManager : MonoBehaviour
     public void GamePause()
     {
         isPaused = true;
+        isOptionsInGame = false;
 
         if (pauseMenu)
             pauseMenu.SetActive(true);
@@ -173,11 +173,28 @@ public class MenuManager : MonoBehaviour
     public void GameUnPause()
     {
         isPaused = false;
+        isOptionsInGame = false;
 
         if (pauseMenu)
             pauseMenu.SetActive(false);
 
         SetTimeScale(1);
+    }
+
+    public void NotPauseMenu()
+    {
+        if (pauseButtons)
+            pauseButtons.SetActive(false);
+    }
+
+    public void OptionInGame()
+    {
+        isOptionsInGame = true;
+
+        NotPauseMenu();
+
+        if (optionsPanel)
+            optionsPanel.SetActive(true);
     }
 
     public void DeadPanel()

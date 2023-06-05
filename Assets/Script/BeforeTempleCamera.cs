@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeforeTemple : MonoBehaviour
+public class BeforeTempleCamera : MonoBehaviour
 {
     public GameObject mainCamera;
     public GameObject templeCamera;
