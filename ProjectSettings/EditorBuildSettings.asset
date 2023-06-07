@@ -15,12 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Lv 1.unity
     guid: 172c73e53bac60249b37488f86eb60b7
   - enabled: 1
-    path: Assets/Scenes/Lv 2 Dummy.unity
-    guid: ecc83aa3862383341be699ca9ab8f9b3
+    path: Assets/Scenes/Lv 1 Candi.unity
+    guid: 912bded98c41f3047b5dfea141115954
   - enabled: 1
-    path: Assets/Scenes/Lv 3 Dummy.unity
-    guid: 6094ba61eb07e6d4cadb7ae302fd2a8a
+    path: Assets/Scenes/Lv 2.unity
+    guid: c7e3b06cf5078b244a6e56573952b419
   - enabled: 1
-    path: Assets/Scenes/Test.unity
-    guid: 9b85cebfa7764e5479bdef454f9dc320
+    path: Assets/Scenes/Lv 2 Candi.unity
+    guid: a3ab23278ffc5754c9ccc19e17bc008c
+  - enabled: 1
+    path: Assets/Scenes/Lv 3.unity
+    guid: 6c6589e969dd28b40886ab866cee8514
   m_configObjects: {}

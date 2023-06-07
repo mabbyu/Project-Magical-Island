@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ec79479448a044ab845b9dbd2a4d29, type: 3}
+  m_Name: Conversation 3.2
+  m_EditorClassIdentifier: 
+  speakerLeft: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+  speakerRight: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Inilah candi siwa, candi yang paling besar dipulau ini, disinilah barang
+      terakhir yang kamu cari berada
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Kamu harus mendapatkan trisula yang berada didalam candi siwa ini, dalam
+      candi ini terdapat makhluk yang paling ganas dipulau ini
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Yaitu naga taksaka, naga taksaka ini digambarkan dengan naga yang memiliki
+      sisik ular, ia memiliki kemampuan untuk mengeluarkan bola api dari mulutnya
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Bola api?
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Iya bola api, sehingga kamu harus berhati hati jangan sampai terkena bola
+      apinya
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Baiklah
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Semoga beruntung

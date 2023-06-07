@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ec79479448a044ab845b9dbd2a4d29, type: 3}
+  m_Name: Conversation 3.1
+  m_EditorClassIdentifier: 
+  speakerLeft: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+  speakerRight: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Sekarang kamu harus mencari candi siwa, candi terbesar yang ada dipulau
+      ini
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Bagaimana caranya aku menemukan candi siwa ini?
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Candi ini berada tepat setelah hutan ini
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Namun kau harus berhati hati karena hutan ini dikenal dengan hutan kutukan
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Hutan kutukan?
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Iya hutan kutukan lihatlah sekelilingmu hutan ini dipenuhi dengan pohon
+      yang bersisikan ular
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Berhati-hatilah

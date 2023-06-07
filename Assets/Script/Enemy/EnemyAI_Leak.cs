@@ -10,11 +10,9 @@ public class EnemyAI_Leak : EnemyAI
 
     public float attackTimeWait;
     public float stuckAttackTime;
-    public float stuckChasingTime;
 
     float aTime;
     float saTime;
-    float scTime;
 
     Transform lastAttackPos;
     public LayerMask layerMaskToFly;
@@ -35,7 +33,6 @@ public class EnemyAI_Leak : EnemyAI
         returnPos.transform.position = transform.position;
         aTime = attackTimeWait;
         saTime = stuckAttackTime;
-        scTime = stuckChasingTime;
 
         lastAttackPos = new GameObject("AttackPos").transform;
     }
@@ -181,12 +178,4 @@ public class EnemyAI_Leak : EnemyAI
             }
         }
     }
-    /*
-    IEnumerator BackPosCd()
-    {
-        yield return new WaitForSeconds(0.1f);
-        target = returnPos;
-        sTime = stuckAttackTime;
-        Debug.Log("returnPos");
-    }*/
 }

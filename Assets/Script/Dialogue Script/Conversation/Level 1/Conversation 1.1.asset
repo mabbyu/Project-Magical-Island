@@ -17,7 +17,7 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
     text: Selamat datang
-  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
     text: Kamu siapa? aku dimana?
   - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
     text: Aku huggins, salah satu makhluk penghuni pulau ini, saat ini kamu berada
@@ -31,11 +31,10 @@ MonoBehaviour:
     text: Aku bisa membantu mu untuk kembali pulang, akan tetapi kamu harus mengumpul
       beberapa barang untuk dapat kembali ke tempatku sebelumnya
   - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
-    text: Aku bisa membantu mu untuk kembali pulang, akan tetapi kamu harus mengumpul
-      beberapa barang untuk dapat kembali ke tempatku sebelumnya
+    text: Katakan padaku apa saja barang yang dibutuhkan dan dimana aku bisa mendapatkannya
   - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
-    text: Aku bisa membantu mu untuk kembali pulang, akan tetapi kamu harus mengumpul
-      beberapa barang untuk dapat kembali ke tempatmu sebelumnya
+    text: Yang pertama kamu harus mengumpulkan 3 macam barang yang ada didalam candi
+      yaitu, Patung Angsa, Bulu Merak, dan sebuah trisula
   - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
     text: Setiap barang yang harus dikumpulkan berada didalam candi yang berbeda
       dan dijaga oleh makhluk penunggu candi, tetapi tidak akan mudah untuk kamu

@@ -191,7 +191,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 74.24, y: 19.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2385132096129766756}
   - {fileID: 2792566073766121264}
@@ -210,8 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af796958e2dd1e146a854e90e323f7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  templeCamera: {fileID: 0}
   speed: 4
   jumpForce: 13
   ropingSpeed: 4
@@ -226,7 +224,7 @@ MonoBehaviour:
   wallJumpDirection: {x: 8, y: 12}
   wallJump: 0
   ropeJumpDirection: {x: 10, y: 14}
-  groundCheckDistance: 0.9
+  groundCheckDistance: 1.1
   wallCheckDistance: 0.25
   ropeCheckDistance: 0.25
   whatIsGround:
@@ -242,7 +240,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  lifes: {fileID: 0}
   fullHeart: {fileID: -1842847615, guid: 071b0b1d1f4a7de48a83cadd75e47ade, type: 3}
   emptyHeart: {fileID: 21300000, guid: aaa9ec2b53fa71540836f95a497059bc, type: 3}
 --- !u!212 &2385132096198861155
@@ -286,7 +283,7 @@ SpriteRenderer:
   m_SortingLayerID: -377194503
   m_SortingLayer: 6
   m_SortingOrder: 1
-  m_Sprite: {fileID: 49581432, guid: c61fed43e9e4bec4e9ee67cc9345c30e, type: 3}
+  m_Sprite: {fileID: -1560443588, guid: c6f16190be730234ba67b60468565317, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -331,8 +328,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11951679, y: 0.057409286}
-  m_Size: {x: 0.543126, y: 1.6188545}
+  m_Offset: {x: -0.11951679, y: -0.014239311}
+  m_Size: {x: 0.543126, y: 1.7621517}
   m_Direction: 0
 --- !u!95 &2385132096198861182
 Animator:

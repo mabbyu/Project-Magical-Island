@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class DialogueDisplay : MonoBehaviour
 {
+    public static DialogueDisplay instance;
+
     public bool isDialogue = false;
     public bool canDialogue;
     public bool hugginsFlying;
 
+    public bool objectiveDone;
+
     public GameObject theDialogue;
-
-    public static DialogueDisplay instance;
-
+    
     public Conversation[] conversation;
     Conversation nextConversation;
     int nextConversationIndex;
@@ -32,6 +34,7 @@ public class DialogueDisplay : MonoBehaviour
     public void Start()
     {
         canDialogue = true;
+        objectiveDone = false;
 
         theDialogue.SetActive(false);
 
@@ -63,6 +66,9 @@ public class DialogueDisplay : MonoBehaviour
         canDialogue = true;
         theDialogue.SetActive(false);
         Huggins.instance.nextPosIndex++;
+
+        if (objectiveDone)
+            MenuManager.instance.DonePanel();
     }
 
     public void Initialize()

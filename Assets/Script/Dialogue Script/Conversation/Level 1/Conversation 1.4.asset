@@ -15,11 +15,11 @@ MonoBehaviour:
   speakerLeft: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
   speakerRight: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
   lines:
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
     text: Kerja bagus, sedikit lagi kamu akan masuk kedalam candi Brahma, candi ini
       merupakan salah satu candi utama dari kompleks candi terbesar dipulau ini,
       candi ini berada dipelataran pusat pulau ini
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
     text: sebelum kamu memasuki candi ini aku ingin memperingatkan, bahwa candi ini
       dijaga oleh sosok kelelawar berkepala kera, ia mampu terbang dengan cukup cepat,dan
       benda yang kamu cari berada didalam candi ini  jadi berhati hati lah

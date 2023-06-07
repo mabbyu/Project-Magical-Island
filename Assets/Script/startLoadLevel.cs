@@ -11,16 +11,13 @@ public class startLoadLevel : MonoBehaviour {
 	void Start ()
 	{	
 		curTimer = waitTime;
-
     }
 	
 	void Update ()
 	{
 		curTimer -= Time.deltaTime *1;
 		if(curTimer <= 0)
-		{
 			doObj();
-		}
 	}
 
 	void doObj ()

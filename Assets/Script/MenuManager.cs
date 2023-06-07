@@ -41,6 +41,7 @@ public class MenuManager : MonoBehaviour
     [Header("Dialogue Panel")]
     public GameObject dialoguePanel;
     public GameObject buttonDialoguePanel;
+    //public bool isDialog;
 
     private void Awake()
     {
@@ -154,6 +155,7 @@ public class MenuManager : MonoBehaviour
 
         if (optionsPanel)
             optionsPanel.SetActive(true);
+
     }
 
 
@@ -221,12 +223,14 @@ public class MenuManager : MonoBehaviour
 
     public void DialoguePanel()
     {
-        GameUnPause();
-
         if (dialoguePanel)
             dialoguePanel.SetActive(true);
         
         EventSystem.current.SetSelectedGameObject(buttonDialoguePanel);
+        SetTimeScale(1);
+
+        if (isPaused)
+            GamePause();
     }
 
     //application

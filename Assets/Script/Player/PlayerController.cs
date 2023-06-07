@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] private int currentLife;
     //[SerializeField] private int maxLife = 3;
     [SerializeField] private Image[] hearts;
-    [SerializeField] private Text lifes;
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite emptyHeart;
 

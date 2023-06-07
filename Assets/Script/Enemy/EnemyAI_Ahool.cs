@@ -10,21 +10,29 @@ public class EnemyAI_Ahool : EnemyAI
 
     public float attackTimeWait;
     public float stuckAttackTime;
-    //public float stuckChasingTime;
-    //public float stuckChasingEndTime;
 
     float aTime;
     float saTime;
-    //float scTime;
-    //float sceTime;
 
     Transform lastAttackPos;
     public LayerMask layerMaskChasingStuck;
     public LayerMask layerMaskToFly;
     public float flyHigh, flyForce;
 
+    [Header("SFX")]
+    public GameObject moveAudio;
+    public GameObject attackAudio;
+
+    private void StartSFX()
+    {
+        moveAudio.SetActive(false);
+        attackAudio.SetActive(false);
+    }
+
     void Start()
     {
+        StartSFX();
+
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -35,8 +43,6 @@ public class EnemyAI_Ahool : EnemyAI
         returnPos.transform.position = transform.position;
         aTime = attackTimeWait;
         saTime = stuckAttackTime;
-        //scTime = stuckChasingTime;
-        //sceTime = stuckChasingEndTime;
 
         lastAttackPos = new GameObject("AttackPos").transform ;
     }
@@ -44,10 +50,12 @@ public class EnemyAI_Ahool : EnemyAI
     private void Update()
     {
         var dist = Vector2.Distance(transform.position, target.position);
-        
+
         if(target == returnPos)
         {
             currentMode = AttackMode.backToPos;
+
+            attackAudio.SetActive(false);
 
             if (dist < 1)
             {
@@ -60,23 +68,11 @@ public class EnemyAI_Ahool : EnemyAI
         {
             if (currentMode == AttackMode.chasing)
             {
+                moveAudio.SetActive(true);
+
                 target = GameObject.FindGameObjectWithTag("Player").transform;
                 speed = 450;
-                /*
-                if (scTime <= 0)
-                {
-                    Physics2D.IgnoreLayerCollision(8, 6, true);
-                    sceTime -= Time.deltaTime;
-                }
 
-                if (sceTime <= 0)
-                {
-                    scTime = stuckChasingTime;
-                    sceTime = stuckChasingEndTime;
-
-                    Physics2D.IgnoreLayerCollision(8, 6, false);
-                }
-                */
                 if (dist <= maximunDistanceToPlayer)
                 {
                     currentMode = AttackMode.idle;
@@ -108,6 +104,9 @@ public class EnemyAI_Ahool : EnemyAI
             }
             else if (currentMode == AttackMode.attack)
             {
+                attackAudio.SetActive(true);
+                moveAudio.SetActive(false);
+
                 target = lastAttackPos.transform;
                 speed = 1250;
 
@@ -118,7 +117,6 @@ public class EnemyAI_Ahool : EnemyAI
                     target = returnPos;
                     saTime = stuckAttackTime;
                 }
-                    //StartCoroutine(BackPosCd());
             }
         }
     }
@@ -163,12 +161,5 @@ public class EnemyAI_Ahool : EnemyAI
             }
         }
     }
-    /*
-    IEnumerator BackPosCd()
-    {
-        yield return new WaitForSeconds(0.25f);
-        target = returnPos;
-        saTime = stuckAttackTime;
-    }*/
 }
 
