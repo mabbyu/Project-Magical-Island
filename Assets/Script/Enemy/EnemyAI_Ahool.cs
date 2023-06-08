@@ -9,10 +9,10 @@ public class EnemyAI_Ahool : EnemyAI
     public AttackMode currentMode;
 
     public float attackTimeWait;
-    public float stuckAttackTime;
+    //public float stuckAttackTime;
 
     float aTime;
-    float saTime;
+    //float saTime;
 
     Transform lastAttackPos;
     public LayerMask layerMaskChasingStuck;
@@ -42,7 +42,7 @@ public class EnemyAI_Ahool : EnemyAI
 
         returnPos.transform.position = transform.position;
         aTime = attackTimeWait;
-        saTime = stuckAttackTime;
+        //saTime = stuckAttackTime;
 
         lastAttackPos = new GameObject("AttackPos").transform ;
     }
@@ -50,10 +50,17 @@ public class EnemyAI_Ahool : EnemyAI
     private void Update()
     {
         var dist = Vector2.Distance(transform.position, target.position);
-
+        /*
+        if (isAstar)
+            speed = 450;
+        else
+            speed = 5;
+        */
         if(target == returnPos)
         {
             currentMode = AttackMode.backToPos;
+            //isAstar = true;
+            speed = 25;
 
             attackAudio.SetActive(false);
 
@@ -68,10 +75,12 @@ public class EnemyAI_Ahool : EnemyAI
         {
             if (currentMode == AttackMode.chasing)
             {
+                //isAstar = true;
+                speed = 10;
+
                 moveAudio.SetActive(true);
 
                 target = GameObject.FindGameObjectWithTag("Player").transform;
-                speed = 450;
 
                 if (dist <= maximunDistanceToPlayer)
                 {
@@ -81,6 +90,8 @@ public class EnemyAI_Ahool : EnemyAI
             }
             else if (currentMode == AttackMode.idle)
             {
+                //isAstar = false;
+
                 target = GameObject.FindGameObjectWithTag("Player").transform;
                 
                 rb.velocity = Vector2.zero;
@@ -96,7 +107,7 @@ public class EnemyAI_Ahool : EnemyAI
 
                 if (aTime <= 0)
                 {
-                    speed = 1250;
+                    speed = 50;
                     currentMode = AttackMode.attack;
                     aTime = attackTimeWait;
                     Debug.Log("attack");
@@ -104,18 +115,22 @@ public class EnemyAI_Ahool : EnemyAI
             }
             else if (currentMode == AttackMode.attack)
             {
+                //isAstar = false;
+
                 attackAudio.SetActive(true);
                 moveAudio.SetActive(false);
 
                 target = lastAttackPos.transform;
-                speed = 1250;
 
-                saTime -= Time.deltaTime;
-                
-                if (dist <= 2 || saTime <= 0)
+                speed = 25;
+
+                //saTime -= Time.deltaTime;
+
+                if (dist <= 0.75 /*|| saTime == 0*/)
                 {
                     target = returnPos;
-                    saTime = stuckAttackTime;
+                    //saTime = stuckAttackTime;
+                    Debug.Log("back pos");
                 }
             }
         }
@@ -135,11 +150,16 @@ public class EnemyAI_Ahool : EnemyAI
             reachedEndOfPath = false;
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime;
+        Vector2 force = direction * speed;
 
-        rb.AddForce(force);
+        //if (isAstar)
+            rb.AddForce(force);
+        //else
+            //transform.position = Vector2.MoveTowards(transform.position, path.vectorPath[currentWaypoint], speed * Time.deltaTime);
 
-        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+            //transform.position = Vector2.MoveTowards(transform.position, ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized, speed * Time.deltaTime);
+
+            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
         if (distance < nextWaypointDistance)
             currentWaypoint++;

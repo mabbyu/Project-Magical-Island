@@ -36,6 +36,8 @@ public class EnemyAI : MonoBehaviour
     /*-------------------------------------------------------------*/
     [Header("After Attack")]
     public Transform returnPos;
+
+    public bool isAstar;
     
     void Start()
     {
@@ -79,7 +81,8 @@ public class EnemyAI : MonoBehaviour
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force =  direction * speed * Time.deltaTime;
 
-        rb.AddForce(force);
+        //if (isAstar)
+            rb.AddForce(force);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
