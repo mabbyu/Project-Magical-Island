@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,7 +102,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Rangda teleport-02_0
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1671
+        width: 532
+        height: 477
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba4da3e01f82bd4f887830b20793258
+      internalID: -1538191830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda teleport-02_1
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 1678
+        width: 531
+        height: 463
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624f82668bd385c43b0319e9d0bde0f5
+      internalID: 617177220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda teleport-02_2
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 1678
+        width: 533
+        height: 463
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb21625b9ba336545827718d111923bb
+      internalID: -631086818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda teleport-02_3
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 1563
+        width: 775
+        height: 674
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0460f6ab40f48c4ba955eda86ad90f2
+      internalID: 1017291758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda teleport-02_8
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 798
+        width: 765
+        height: 467
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f237964b146334249ba4fdb662cc1f38
+      internalID: 160534785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda teleport-02_9
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 678
+        width: 1187
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc5804dc22a504419c3d99121957349
+      internalID: -1826524188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda teleport-02_10
+      rect:
+        serializedVersion: 2
+        x: 2759
+        y: 904
+        width: 316
+        height: 283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75e13193b5899e42995a948865b9a48
+      internalID: -1476142114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda teleport-02_12
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 237
+        width: 205
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a972c3a5334bc7a4daf65ca05886c309
+      internalID: 212204997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda teleport-02_13
+      rect:
+        serializedVersion: 2
+        x: 2609
+        y: 196
+        width: 245
+        height: 382
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abab0a196c149dc4f9c9c7d5ae73fd5b
+      internalID: -1907491819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -113,7 +302,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rangda teleport-02_6: 1619703954
+      Rangda teleport-02_12: 212204997
+      Rangda teleport-02_10: -1476142114
+      Rangda teleport-02_13: -1907491819
+      Rangda teleport-02_8: 160534785
+      Rangda teleport-02_4: -184692864
+      Rangda teleport-02_7: 1835101152
+      Rangda teleport-02_1: 617177220
+      Rangda teleport-02_3: 1017291758
+      Rangda teleport-02_2: -631086818
+      Rangda teleport-02_9: -1826524188
+      Rangda teleport-02_0: -1538191830
+      Rangda teleport-02_5: -547974017
+      Rangda teleport-02_11: -1995068985
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

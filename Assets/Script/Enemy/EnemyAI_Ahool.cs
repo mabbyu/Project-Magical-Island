@@ -9,10 +9,10 @@ public class EnemyAI_Ahool : EnemyAI
     public AttackMode currentMode;
 
     public float attackTimeWait;
-    //public float stuckAttackTime;
+    public float stuckAttackTime;
 
     float aTime;
-    //float saTime;
+    float saTime;
 
     Transform lastAttackPos;
     public LayerMask layerMaskChasingStuck;
@@ -23,6 +23,9 @@ public class EnemyAI_Ahool : EnemyAI
     public GameObject moveAudio;
     public GameObject attackAudio;
 
+    [Header("Animation")]
+    private Animator anim;
+    
     private void StartSFX()
     {
         moveAudio.SetActive(false);
@@ -33,6 +36,8 @@ public class EnemyAI_Ahool : EnemyAI
     {
         StartSFX();
 
+        anim = GetComponent<Animator>();
+
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -42,7 +47,7 @@ public class EnemyAI_Ahool : EnemyAI
 
         returnPos.transform.position = transform.position;
         aTime = attackTimeWait;
-        //saTime = stuckAttackTime;
+        saTime = stuckAttackTime;
 
         lastAttackPos = new GameObject("AttackPos").transform ;
     }
@@ -58,13 +63,11 @@ public class EnemyAI_Ahool : EnemyAI
         */
         if(target == returnPos)
         {
-            currentMode = AttackMode.backToPos;
             //isAstar = true;
-            speed = 25;
-
+            currentMode = AttackMode.backToPos;
             attackAudio.SetActive(false);
 
-            if (dist < 1)
+            if (dist < 0.5)
             {
                 currentMode = AttackMode.chasing;
                 target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -92,6 +95,8 @@ public class EnemyAI_Ahool : EnemyAI
             {
                 //isAstar = false;
 
+                speed = 25;
+
                 target = GameObject.FindGameObjectWithTag("Player").transform;
                 
                 rb.velocity = Vector2.zero;
@@ -107,7 +112,6 @@ public class EnemyAI_Ahool : EnemyAI
 
                 if (aTime <= 0)
                 {
-                    speed = 50;
                     currentMode = AttackMode.attack;
                     aTime = attackTimeWait;
                     Debug.Log("attack");
@@ -122,14 +126,13 @@ public class EnemyAI_Ahool : EnemyAI
 
                 target = lastAttackPos.transform;
 
-                speed = 25;
+                saTime -= Time.deltaTime;
 
-                //saTime -= Time.deltaTime;
-
-                if (dist <= 0.75 /*|| saTime == 0*/)
+                if (dist <= 1.25 || saTime <= 0)
                 {
+
                     target = returnPos;
-                    //saTime = stuckAttackTime;
+                    saTime = stuckAttackTime;
                     Debug.Log("back pos");
                 }
             }

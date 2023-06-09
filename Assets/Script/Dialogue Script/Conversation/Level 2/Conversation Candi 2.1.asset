@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ec79479448a044ab845b9dbd2a4d29, type: 3}
+  m_Name: Conversation Candi 2.1
+  m_EditorClassIdentifier: 
+  speakerLeft: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+  speakerRight: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Aku terkesan denganmu, kamu berhasil mendapatkan barang kedua yaitu bulu
+      merak
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Satu langkah lagi kamu dapat kembali ketempatmu berasal
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Tapi sebelum kamu melanjutkan perjalanan berikutnya, aku ingin memberitahumu
+      sesuatu
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Apa ini tentang patung lagi?
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Ya benar, didalam candi ini terdapat arca dewa wisnu yang merupakan dewa
+      yang bertugas untuk memelihara dan melindungi
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Dewa wisnu digambar memiliki 4 tangan yang masing masing tangannya memegang
+      gada, cakra, sangkha dan juga kuncup teratai
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Apakah kamu siap dengan benda yang berikutnya?
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Aku siap
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: "Baiklah\r"

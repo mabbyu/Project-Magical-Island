@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    
     void Start()
     {
-        
     }
 
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,8 +20,6 @@ public class Projectile : MonoBehaviour
         //Destroy(gameObject);
 
         if (collision.gameObject.name.Equals("Player") || collision.gameObject.CompareTag("Ground"))
-        {
             Destroy(gameObject);
-        }
     }
 }

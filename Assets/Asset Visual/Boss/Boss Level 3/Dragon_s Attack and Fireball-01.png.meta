@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -76,9 +76,327 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_0
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1910
+        width: 401
+        height: 378
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175bcadb8f26cca4db0f9642da82fc7d
+      internalID: 1720546465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_1
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 1925
+        width: 403
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be3d7f8e3f107e548bdb1da66d0257fe
+      internalID: -892141422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_2
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 1947
+        width: 403
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456014c0850452b469304d7297aec0d6
+      internalID: 1454993867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_3
+      rect:
+        serializedVersion: 2
+        x: 1924
+        y: 1956
+        width: 403
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c60cc6a0c539f4844a42a5bc56d94ac2
+      internalID: 1736908369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_4
+      rect:
+        serializedVersion: 2
+        x: 2385
+        y: 1970
+        width: 401
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b322df152044a4baf1fd08f2aa32a9
+      internalID: -733641589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_5
+      rect:
+        serializedVersion: 2
+        x: 3026
+        y: 1996
+        width: 402
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4de7f1e31fd6c4f8f81966fcac985e
+      internalID: -1357008984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_6
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 1135
+        width: 512
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c449fb64150d9d14c998878323900b2e
+      internalID: -1192883965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_9
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 1144
+        width: 484
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fa1b3f5c18468409e9440a889c0924
+      internalID: -2005542177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_12
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 1133
+        width: 472
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc420651efe3c045ba723cbebc98e70
+      internalID: 1581361660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_14
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 1147
+        width: 586
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6d53ff54db76d45ac7518055bed407
+      internalID: -1546428499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_15
+      rect:
+        serializedVersion: 2
+        x: 2889
+        y: 1151
+        width: 528
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9412b4f2a68496e4a87a1f3b4292b796
+      internalID: -395049055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_21
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 775
+        width: 500
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bb749615007614780869ac860e42d5
+      internalID: 1547521386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_23
+      rect:
+        serializedVersion: 2
+        x: 2104
+        y: 784
+        width: 574
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd8c39744758c645954e4e7470001ec
+      internalID: 1184112457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_s Attack and Fireball-01_24
+      rect:
+        serializedVersion: 2
+        x: 2786
+        y: 804
+        width: 574
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 178f109385cd1e945a2f3dca74ecf43b
+      internalID: 1275213171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +407,40 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dragon_s Attack and Fireball-01_5: -1357008984
+      Dragon_s Attack and Fireball-01_12: 1581361660
+      Dragon_s Attack and Fireball-01_10: 1537034835
+      Dragon_s Attack and Fireball-01_29: -100391056
+      Dragon_s Attack and Fireball-01_13: -401456639
+      Dragon_s Attack and Fireball-01_0: 1720546465
+      Dragon_s Attack and Fireball-01_20: 952396018
+      Dragon_s Attack and Fireball-01_7: 72496343
+      Dragon_s Attack and Fireball-01_18: 364561238
+      Dragon_s Attack and Fireball-01_11: -1763319628
+      Dragon_s Attack and Fireball-01_8: 859791729
+      Dragon_s Attack and Fireball-01_31: -1835753536
+      Dragon_s Attack and Fireball-01_9: -2005542177
+      Dragon_s Attack and Fireball-01_3: 1736908369
+      Dragon_s Attack and Fireball-01_2: 1454993867
+      Dragon_s Attack and Fireball-01_23: 1184112457
+      Dragon_s Attack and Fireball-01_26: -808577244
+      Dragon_s Attack and Fireball-01_28: -201846255
+      Dragon_s Attack and Fireball-01_21: 1547521386
+      Dragon_s Attack and Fireball-01_27: 1058085419
+      Dragon_s Attack and Fireball-01_30: 1221489112
+      Dragon_s Attack and Fireball-01_15: -395049055
+      Dragon_s Attack and Fireball-01_24: 1275213171
+      Dragon_s Attack and Fireball-01_22: -797159483
+      Dragon_s Attack and Fireball-01_6: -1192883965
+      Dragon_s Attack and Fireball-01_4: -733641589
+      Dragon_s Attack and Fireball-01_25: 1962180440
+      Dragon_s Attack and Fireball-01_32: 1484796150
+      Dragon_s Attack and Fireball-01_17: -711942680
+      Dragon_s Attack and Fireball-01_19: -1318077241
+      Dragon_s Attack and Fireball-01_1: -892141422
+      Dragon_s Attack and Fireball-01_14: -1546428499
+      Dragon_s Attack and Fireball-01_16: -335708107
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

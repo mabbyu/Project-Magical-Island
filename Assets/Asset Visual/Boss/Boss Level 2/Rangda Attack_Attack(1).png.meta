@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,7 +102,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Rangda Attack_Attack(1)_0
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1730
+        width: 793
+        height: 644
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374e3c9b58d2fb84885c45555b5b4be1
+      internalID: 730219535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda Attack_Attack(1)_1
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 1730
+        width: 783
+        height: 644
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7c2d8ede6c62e48b950b0b96a6a092
+      internalID: 700980034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda Attack_Attack(1)_2
+      rect:
+        serializedVersion: 2
+        x: 2429
+        y: 1730
+        width: 867
+        height: 644
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac621ef584cf0f041b431c2efe80b506
+      internalID: -823186952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda Attack_Attack(1)_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 878
+        width: 1129
+        height: 643
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe6f076e422f754fa33083a3252acff
+      internalID: 461586584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda Attack_Attack(1)_6
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 878
+        width: 916
+        height: 643
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d2e34a59cb5ad4e9b8cdf284107720
+      internalID: 78017476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda Attack_Attack(1)_7
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 878
+        width: 1167
+        height: 643
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe139366901d6748953208840c78444
+      internalID: 500454215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda Attack_Attack(1)_9
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 119
+        width: 1230
+        height: 644
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b51c4ba663d923e46a47dc0f6d13ebc0
+      internalID: 2029491393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda Attack_Attack(1)_10
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 119
+        width: 896
+        height: 644
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dea67dbb9208114ba9a19aee9bf3c9b
+      internalID: -1270904513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rangda Attack_Attack(1)_11
+      rect:
+        serializedVersion: 2
+        x: 2436
+        y: 119
+        width: 835
+        height: 644
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00405c912d766ea49bd6cdc8b1a9d202
+      internalID: 71786604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -113,7 +302,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rangda Attack_Attack(1)_2: -823186952
+      Rangda Attack_Attack(1)_3: 461586584
+      Rangda Attack_Attack(1)_4: 936320966
+      Rangda Attack_Attack(1)_10: -1270904513
+      Rangda Attack_Attack(1)_9: 2029491393
+      Rangda Attack_Attack(1)_11: 71786604
+      Rangda Attack_Attack(1)_7: 500454215
+      Rangda Attack_Attack(1)_5: 423023622
+      Rangda Attack_Attack(1)_1: 700980034
+      Rangda Attack_Attack(1)_8: -437222462
+      Rangda Attack_Attack(1)_0: 730219535
+      Rangda Attack_Attack(1)_6: 78017476
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -21,8 +21,29 @@ public class EnemyAI_Leak : EnemyAI
     public float distTp;
     public List<Transform> tpPoint = new List<Transform>();
 
+    [Header("SFX")]
+    public GameObject moveAudio;
+    public GameObject attackAudio;
+    public GameObject tpAudio;
+
+    [Header("Animation")]
+    private Animator anim;
+    public bool isTp;
+
+
+    private void StartSFX()
+    {
+        moveAudio.SetActive(false);
+        attackAudio.SetActive(false);
+        tpAudio.SetActive(false);
+    }
+
     void Start()
     {
+        StartSFX();
+
+        anim = GetComponent<Animator>();
+
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -39,14 +60,17 @@ public class EnemyAI_Leak : EnemyAI
 
     private void Update()
     {
+        AnimatorContoller();
+
         var dist = Vector2.Distance(transform.position, target.position);
 
         if (target == returnPos)
         {
             currentMode = AttackMode.backToPos;
-            speed = 1250;
+            attackAudio.SetActive(false);
+            tpAudio.SetActive(false);
 
-            if (dist < 5)
+            if (dist < 0.5)
             {
                 currentMode = AttackMode.chasing;
                 target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -57,14 +81,19 @@ public class EnemyAI_Leak : EnemyAI
         {
             if (dist >= distTp)
             {
+                isTp = true;
+
+                tpAudio.SetActive(true);
+                moveAudio.SetActive(false);
                 transform.position = GetClosestSpawn().position;
+                StartCoroutine(TpSoundCd());
             }
             if (currentMode == AttackMode.chasing)
             {
-                target = GameObject.FindGameObjectWithTag("Player").transform;
-                speed = 100;
+                moveAudio.SetActive(true);
 
-                
+                target = GameObject.FindGameObjectWithTag("Player").transform;
+                speed = 5;
 
                 if (dist <= maximunDistanceToPlayer)
                 {
@@ -74,6 +103,8 @@ public class EnemyAI_Leak : EnemyAI
             }
             else if (currentMode == AttackMode.idle)
             {
+                speed = 40;
+                
                 target = GameObject.FindGameObjectWithTag("Player").transform;
 
                 rb.velocity = Vector2.zero;
@@ -89,7 +120,6 @@ public class EnemyAI_Leak : EnemyAI
 
                 if (aTime <= 0)
                 {
-                    speed = 100;
                     currentMode = AttackMode.attack;
                     aTime = attackTimeWait;
                     Debug.Log("attack");
@@ -97,20 +127,39 @@ public class EnemyAI_Leak : EnemyAI
             }
             else if (currentMode == AttackMode.attack)
             {
+                attackAudio.SetActive(true);
+                moveAudio.SetActive(false);
+                tpAudio.SetActive(false);
+
+
                 target = lastAttackPos.transform;
-                speed = 1250;
 
                 saTime -= Time.deltaTime;
 
-                if (dist <= 2 || saTime <= 0)
+                if (dist <= 1.25 || saTime <= 0)
                 {
+                    speed = 25;
                     target = returnPos;
                     saTime = stuckAttackTime;
                 }
             }
         }
     }
+    
+    private void AnimatorContoller()
+    {
+        anim.SetBool("isMove", currentMode == AttackMode.chasing || currentMode == AttackMode.backToPos);
+        anim.SetBool("isAttack", currentMode == AttackMode.attack);
+        anim.SetBool("isIdle", currentMode == AttackMode.idle);
+        anim.SetBool("isTp", isTp && currentMode == AttackMode.chasing || isTp && currentMode == AttackMode.idle);
+    }
 
+    IEnumerator TpSoundCd()
+    {
+        yield return new WaitForSeconds(2.1f);
+        tpAudio.SetActive(false);
+        isTp = false;
+    }
     Transform GetClosestSpawn()
     {
         Transform tMin = null;
@@ -142,7 +191,7 @@ public class EnemyAI_Leak : EnemyAI
             reachedEndOfPath = false;
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime;
+        Vector2 force = direction * speed;
 
         rb.AddForce(force);
 

@@ -12,10 +12,8 @@ public class EnemyAI_Taksaka : EnemyAI
     public float flyHigh, flyForce;
 
     public float timeToShoot = 3;
-    public float stuckChasingTime;
 
     float tShoot;
-    float scTime;
 
     public int amountBurst = 3;
     public float timeBetweenBurst;
@@ -24,19 +22,32 @@ public class EnemyAI_Taksaka : EnemyAI
     public GameObject projectile;
     public float shootSpeed;
     public Transform shootSpawn;
-    
 
+    [Header("SFX")]
+    public GameObject moveAudio;
+    public GameObject attackAudio;
+
+    [Header("Animation")]
+    private Animator anim;
+
+    private void StartSFX()
+    {
+        moveAudio.SetActive(false);
+        attackAudio.SetActive(false);
+    }
 
     void Start()
     {
+        StartSFX();
+
+        anim = GetComponent<Animator>();
+
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
         InvokeRepeating("UpdatePath", 0f, .5f);
 
         Physics2D.IgnoreLayerCollision(8, 7, true);
-
-        scTime = stuckChasingTime;
     }
 
     private void Update()
@@ -48,7 +59,7 @@ public class EnemyAI_Taksaka : EnemyAI
 
         if (currentMode == AttackMode.chasing)
         {
-            speed = 450;
+            moveAudio.SetActive(true);
 
             if (dist <= maximunDistanceToPlayer)
             {
@@ -58,11 +69,12 @@ public class EnemyAI_Taksaka : EnemyAI
         else if (currentMode == AttackMode.attack)
         {
             tShoot -= Time.deltaTime;
+            moveAudio.SetActive(false);
+
             if (tShoot <= 0)
             {
                 Shoot();
             }
-            //speed = 0;
             rb.velocity = Vector2.zero;
 
             if (dist > maximunDistanceToPlayer)
@@ -86,7 +98,7 @@ public class EnemyAI_Taksaka : EnemyAI
             reachedEndOfPath = false;
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime;
+        Vector2 force = direction * speed;
 
         rb.AddForce(force);
 
@@ -136,6 +148,7 @@ public class EnemyAI_Taksaka : EnemyAI
         {
             if (tbShoot >= timeBetweenBurst)
             {
+                attackAudio.SetActive(true);
                 Vector2 direction = ((Vector2)target.position - rb.position).normalized;
                 var bullet = Instantiate(projectile, shootSpawn.position, Quaternion.identity);
                 Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
@@ -144,6 +157,7 @@ public class EnemyAI_Taksaka : EnemyAI
                 tbShoot = 0;
             }
             yield return new WaitForSeconds(timeBetweenBurst);
+            attackAudio.SetActive(false);
             am++;
         }
     }
