@@ -5500,7 +5500,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593036911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 192.79, y: 59.92, z: 0}
+  m_LocalPosition: {x: 218.13, y: 73.69, z: 0}
   m_LocalScale: {x: 0.35625198, y: 0.56229454, z: 0.35625198}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5612,7 +5612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594363345}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 88.47, y: 63.18, z: 0}
+  m_LocalPosition: {x: 83.77, y: 63.18, z: 0}
   m_LocalScale: {x: 1.3858, y: 1.3858, z: 1.3858}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7565,7 +7565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6934469941094373657, guid: 01b08b9fb14bcc74195293fce9f9e257, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.424
+      value: 63.6
       objectReference: {fileID: 0}
     - target: {fileID: 6934469941094373657, guid: 01b08b9fb14bcc74195293fce9f9e257, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19282,6 +19282,7 @@ MonoBehaviour:
   buttonDonePanel: {fileID: 538824514}
   dialoguePanel: {fileID: 853363583}
   buttonDialoguePanel: {fileID: 1714578922}
+  allSfx: []
 --- !u!4 &2090680646
 Transform:
   m_ObjectHideFlags: 0

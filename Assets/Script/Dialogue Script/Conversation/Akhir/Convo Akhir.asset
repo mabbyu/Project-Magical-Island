@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ec79479448a044ab845b9dbd2a4d29, type: 3}
+  m_Name: Convo Akhir
+  m_EditorClassIdentifier: 
+  speakerLeft: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+  speakerRight: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Luar biasa kamu berhasil mendapatkan trisula dewa siwa
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Apa yang harus aku lakukan dengan ini?
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Kamu harus menggabungkan ketiga benda ini agar dapat membuat portal untuk
+      menuju tempatmu berasal
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Akan tetapi sebelum melakukan itu aku akan memberitahumu tentang arca dewa
+      siwa
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Dewa siwa sendiri merupakan dewa yang dikenal sebagai dewa pelebur, bertugas
+      untuk melebur segala sesuatu yang sudah usang
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Dewa siwa digambarkan memiliki 4 tangan yang masing masing memegang trisula,
+      camara, tasbih, dan kendi dengan hiasan ular kobra yang berada dilehernya
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Dan dengan ketiga benda yang telah kamu kumpulkan kamu dapat kembali ke
+      tempatmu berasal
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Jadi aku hanya harus menggabungkan ketiga benda ini agar dapat kembali
+      ke tempatku berasal?
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Iya, namun sebelumnya aku sangat berterima kasih kepadamu karena telah
+      membebaskan ku dari kutukan sisik ular ini
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Kutukan?
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Iya, selama ini aku terkena kutukan yang membuat aku memiliki sisik ular,
+      itu merupakan kutukan yang sama seperti hutan ini
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Namun karena kamu telah berhasil mendapatkan trisula dewa siwa ini kamu
+      mematahkan kutukan ini
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Mengapa kamu baru memberitahu ku sekarang?
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Karena aku hanya ingin membantumu untuk pulang, namun secara tidak langsung
+      kamu juga berhasil mematahkan kutukan ini
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: Kamu tidak mempunyai waktu yang cukup, segera gabungkanlah ketiga barang
+      itu
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Terima kasih kau telah membantu ku untuk bisa pulang ketempat ku berasal,
+      aku tidak akan melupakan mu
+  - character: {fileID: 11400000, guid: 916ea27d2fbecf844a32a49d333c28d6, type: 2}
+    text: Selamat tinggal huggins
+  - character: {fileID: 11400000, guid: 57bd7aeecf6d2b346985f742c6cf3c65, type: 2}
+    text: "Selamat tinggal\r"

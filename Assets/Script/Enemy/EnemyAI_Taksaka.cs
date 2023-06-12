@@ -29,6 +29,9 @@ public class EnemyAI_Taksaka : EnemyAI
 
     [Header("Animation")]
     private Animator anim;
+    public Animator bodyAnim;
+    public bool isShoot;
+    public bool isVertical;
 
     private void StartSFX()
     {
@@ -48,12 +51,16 @@ public class EnemyAI_Taksaka : EnemyAI
         InvokeRepeating("UpdatePath", 0f, .5f);
 
         Physics2D.IgnoreLayerCollision(8, 7, true);
+
+        if (GameObject.FindGameObjectWithTag("Player"))
+            target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
     {
+        AnimatorContoller();
+        
         var dist = Vector2.Distance(transform.position, target.position);
-        target = GameObject.FindGameObjectWithTag("Player").transform;
 
         tbShoot += Time.deltaTime;
 
@@ -82,6 +89,24 @@ public class EnemyAI_Taksaka : EnemyAI
                 currentMode = AttackMode.chasing;
             }
         }
+    }
+    private void AnimatorContoller()
+    {
+        anim.SetBool("isMove", currentMode == AttackMode.chasing);
+        bodyAnim.SetBool("isMoveVertical", isVertical);
+        anim.SetBool("isAttack", isShoot);
+    }
+    
+    private void OnTriggerEnter2D(Collider2D cld_trggr)
+    {
+        if (cld_trggr.gameObject.name.Equals("Vertical"))
+            isVertical = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D cld_trggr)
+    {
+        if (cld_trggr.gameObject.name.Equals("Vertical"))
+            isVertical = false;
     }
 
     void FixedUpdate()
@@ -148,6 +173,7 @@ public class EnemyAI_Taksaka : EnemyAI
         {
             if (tbShoot >= timeBetweenBurst)
             {
+                isShoot = true;
                 attackAudio.SetActive(true);
                 Vector2 direction = ((Vector2)target.position - rb.position).normalized;
                 var bullet = Instantiate(projectile, shootSpawn.position, Quaternion.identity);
@@ -157,6 +183,7 @@ public class EnemyAI_Taksaka : EnemyAI
                 tbShoot = 0;
             }
             yield return new WaitForSeconds(timeBetweenBurst);
+            isShoot = false;
             attackAudio.SetActive(false);
             am++;
         }

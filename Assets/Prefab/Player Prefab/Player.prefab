@@ -225,8 +225,8 @@ MonoBehaviour:
   wallJump: 0
   ropeJumpDirection: {x: 10, y: 14}
   groundCheckDistance: 1.1
-  wallCheckDistance: 0.25
-  ropeCheckDistance: 0.25
+  wallCheckDistance: 0.4
+  ropeCheckDistance: 0.4
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64

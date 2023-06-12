@@ -41,6 +41,9 @@ public class MenuManager : MonoBehaviour
     [Header("Dialogue Panel")]
     public GameObject dialoguePanel;
     public GameObject buttonDialoguePanel;
+
+    [Header("SFX Panel")]
+    public GameObject[] allSfx;
     //public bool isDialog;
 
     private void Awake()

@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public bool playerAlive;
 
+    public Animator anim;
+
     void Awake()
     {
         instance = this;
@@ -22,11 +24,19 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
-    public void GameLoadLevel(string name)
+    public void GameLoadLevel(string lvl)
     {
-        SceneManager.LoadScene(name);
+        anim.SetTrigger("FadeOut");
+        StartCoroutine(LoadingLevel(lvl));
+    }
+
+   IEnumerator LoadingLevel(string lvl)
+    {
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+        SceneManager.LoadScene(lvl); 
+        anim.SetTrigger("FadeIn");
     }
 }

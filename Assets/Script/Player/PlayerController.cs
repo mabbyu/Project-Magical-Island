@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
     {
         health = 3;
         instance = this;
-        //GameManager.instance.playerAlive = true;
+        GameManager.instance.playerAlive = true;
     }
 
     void Update()

@@ -14,6 +14,8 @@ public class EnemyAI_Ahool : EnemyAI
     float aTime;
     float saTime;
 
+    float theSpeed;
+
     Transform lastAttackPos;
     public LayerMask layerMaskChasingStuck;
     public LayerMask layerMaskToFly;
@@ -61,7 +63,8 @@ public class EnemyAI_Ahool : EnemyAI
         else
             speed = 5;
         */
-        if(target == returnPos)
+
+        if (target == returnPos)
         {
             //isAstar = true;
             currentMode = AttackMode.backToPos;
@@ -79,7 +82,7 @@ public class EnemyAI_Ahool : EnemyAI
             if (currentMode == AttackMode.chasing)
             {
                 //isAstar = true;
-                speed = 10;
+                speed = 8;
 
                 moveAudio.SetActive(true);
 
@@ -95,7 +98,7 @@ public class EnemyAI_Ahool : EnemyAI
             {
                 //isAstar = false;
 
-                speed = 25;
+                speed = 20;
 
                 target = GameObject.FindGameObjectWithTag("Player").transform;
                 

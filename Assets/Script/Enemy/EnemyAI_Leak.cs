@@ -103,8 +103,6 @@ public class EnemyAI_Leak : EnemyAI
             }
             else if (currentMode == AttackMode.idle)
             {
-                speed = 40;
-                
                 target = GameObject.FindGameObjectWithTag("Player").transform;
 
                 rb.velocity = Vector2.zero;
@@ -117,6 +115,7 @@ public class EnemyAI_Leak : EnemyAI
                 aTime -= Time.deltaTime;
 
                 lastAttackPos.transform.position = target.transform.position;
+                speed = 25;
 
                 if (aTime <= 0)
                 {
@@ -138,7 +137,6 @@ public class EnemyAI_Leak : EnemyAI
 
                 if (dist <= 1.25 || saTime <= 0)
                 {
-                    speed = 25;
                     target = returnPos;
                     saTime = stuckAttackTime;
                 }

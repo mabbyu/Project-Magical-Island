@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -411,10 +411,10 @@ TextureImporter:
       Dragon_s Attack and Fireball-01_5: -1357008984
       Dragon_s Attack and Fireball-01_12: 1581361660
       Dragon_s Attack and Fireball-01_10: 1537034835
-      Dragon_s Attack and Fireball-01_29: -100391056
       Dragon_s Attack and Fireball-01_13: -401456639
       Dragon_s Attack and Fireball-01_0: 1720546465
       Dragon_s Attack and Fireball-01_20: 952396018
+      Dragon_s Attack and Fireball-01_16: -335708107
       Dragon_s Attack and Fireball-01_7: 72496343
       Dragon_s Attack and Fireball-01_18: 364561238
       Dragon_s Attack and Fireball-01_11: -1763319628
@@ -438,9 +438,9 @@ TextureImporter:
       Dragon_s Attack and Fireball-01_32: 1484796150
       Dragon_s Attack and Fireball-01_17: -711942680
       Dragon_s Attack and Fireball-01_19: -1318077241
+      Dragon_s Attack and Fireball-01_29: -100391056
       Dragon_s Attack and Fireball-01_1: -892141422
       Dragon_s Attack and Fireball-01_14: -1546428499
-      Dragon_s Attack and Fireball-01_16: -335708107
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

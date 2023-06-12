@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lv 3 Candi.unity
     guid: 86dd88959eec379489c3035efa06011d
+  - enabled: 1
+    path: Assets/Scenes/Lv Akhir.unity
+    guid: 56f0719060aa919458be91c563cd424e
   m_configObjects: {}

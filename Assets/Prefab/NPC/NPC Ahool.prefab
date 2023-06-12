@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seeker: {fileID: 0}
   rb: {fileID: 0}
-  speed: 450
+  speed: 10
   enemyGFX: {fileID: 1630123715940182494}
   target: {fileID: 0}
   nextWaypointDistance: 3
@@ -192,6 +192,7 @@ MonoBehaviour:
   reachedEndOfPath: 0
   maximunDistanceToPlayer: 3.5
   returnPos: {fileID: 0}
+  isAstar: 0
   currentMode: 0
   attackTimeWait: 1
   stuckAttackTime: 0.5
