@@ -184,6 +184,9 @@ public class MenuManager : MonoBehaviour
             pauseMenu.SetActive(false);
 
         SetTimeScale(1);
+
+        if (deadPanel || donePanel)
+            SetTimeScale(0);
     }
 
     public void NotPauseMenu()

@@ -10,11 +10,11 @@ public class EnemyAI_Ahool : EnemyAI
 
     public float attackTimeWait;
     public float stuckAttackTime;
+    public float stuckBackposTime;
 
     float aTime;
     float saTime;
-
-    float theSpeed;
+    float sbTime;
 
     Transform lastAttackPos;
     public LayerMask layerMaskChasingStuck;
@@ -50,58 +50,55 @@ public class EnemyAI_Ahool : EnemyAI
         returnPos.transform.position = transform.position;
         aTime = attackTimeWait;
         saTime = stuckAttackTime;
+        sbTime = stuckBackposTime;
 
         lastAttackPos = new GameObject("AttackPos").transform ;
+
+        if (GameObject.FindGameObjectWithTag("Player"))
+            target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
     {
         var dist = Vector2.Distance(transform.position, target.position);
-        /*
-        if (isAstar)
-            speed = 450;
-        else
-            speed = 5;
-        */
 
         if (target == returnPos)
         {
-            //isAstar = true;
             currentMode = AttackMode.backToPos;
             attackAudio.SetActive(false);
+            sbTime -= Time.deltaTime;
 
-            if (dist < 0.5)
+            if (dist < 0.5 || sbTime <= 0)
             {
                 currentMode = AttackMode.chasing;
                 target = GameObject.FindGameObjectWithTag("Player").transform;
-                Debug.Log("chasing");
+                Debug.Log("NPC Ahool Mengejar Pemain");
             }
         }
         else
         {
             if (currentMode == AttackMode.chasing)
             {
-                //isAstar = true;
                 speed = 8;
 
                 moveAudio.SetActive(true);
 
                 target = GameObject.FindGameObjectWithTag("Player").transform;
+                sbTime = stuckBackposTime;
 
                 if (dist <= maximunDistanceToPlayer)
                 {
                     currentMode = AttackMode.idle;
-                    Debug.Log("idle");
+                    Debug.Log("NPC Ahool Bersiap Untuk Menyerang");
                 }
             }
             else if (currentMode == AttackMode.idle)
             {
-                //isAstar = false;
-
                 speed = 20;
 
-                target = GameObject.FindGameObjectWithTag("Player").transform;
-                
+                if (GameObject.FindGameObjectWithTag("Player"))
+                    target = GameObject.FindGameObjectWithTag("Player").transform;
+
                 rb.velocity = Vector2.zero;
 
                 var dist2 = Vector2.Distance(transform.position, returnPos.position);
@@ -117,13 +114,11 @@ public class EnemyAI_Ahool : EnemyAI
                 {
                     currentMode = AttackMode.attack;
                     aTime = attackTimeWait;
-                    Debug.Log("attack");
+                    Debug.Log("NPC Ahool Menyerang Pemain");
                 }
             }
             else if (currentMode == AttackMode.attack)
             {
-                //isAstar = false;
-
                 attackAudio.SetActive(true);
                 moveAudio.SetActive(false);
 
@@ -136,7 +131,7 @@ public class EnemyAI_Ahool : EnemyAI
 
                     target = returnPos;
                     saTime = stuckAttackTime;
-                    Debug.Log("back pos");
+                    Debug.Log("NPC Ahool Kembali Ke Posisi Sebelumnya");
                 }
             }
         }
@@ -158,14 +153,9 @@ public class EnemyAI_Ahool : EnemyAI
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed;
 
-        //if (isAstar)
-            rb.AddForce(force);
-        //else
-            //transform.position = Vector2.MoveTowards(transform.position, path.vectorPath[currentWaypoint], speed * Time.deltaTime);
+        rb.AddForce(force);
 
-            //transform.position = Vector2.MoveTowards(transform.position, ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized, speed * Time.deltaTime);
-
-            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
         if (distance < nextWaypointDistance)
             currentWaypoint++;

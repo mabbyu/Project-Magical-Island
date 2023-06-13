@@ -10,9 +10,11 @@ public class EnemyAI_Leak : EnemyAI
 
     public float attackTimeWait;
     public float stuckAttackTime;
+    public float stuckBackposTime;
 
     float aTime;
     float saTime;
+    float sbTime;
 
     Transform lastAttackPos;
     public LayerMask layerMaskToFly;
@@ -54,8 +56,12 @@ public class EnemyAI_Leak : EnemyAI
         returnPos.transform.position = transform.position;
         aTime = attackTimeWait;
         saTime = stuckAttackTime;
+        sbTime = stuckBackposTime;
 
         lastAttackPos = new GameObject("AttackPos").transform;
+
+        if (GameObject.FindGameObjectWithTag("Player"))
+            target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
@@ -67,14 +73,18 @@ public class EnemyAI_Leak : EnemyAI
         if (target == returnPos)
         {
             currentMode = AttackMode.backToPos;
+           
             attackAudio.SetActive(false);
             tpAudio.SetActive(false);
+            
+            sbTime -= Time.deltaTime;
 
-            if (dist < 0.5)
+            if (dist < 0.5 || sbTime <= 0)
             {
                 currentMode = AttackMode.chasing;
                 target = GameObject.FindGameObjectWithTag("Player").transform;
-                Debug.Log("chasing");
+                sbTime = stuckBackposTime;
+                Debug.Log("NPC Rangda Mengejar Pemain");
             }
         }
         else
@@ -87,23 +97,28 @@ public class EnemyAI_Leak : EnemyAI
                 moveAudio.SetActive(false);
                 transform.position = GetClosestSpawn().position;
                 StartCoroutine(TpSoundCd());
+                Debug.Log("NPC Rangda Melakukan Teleport");
             }
             if (currentMode == AttackMode.chasing)
             {
+                speed = 5;
+                
                 moveAudio.SetActive(true);
 
                 target = GameObject.FindGameObjectWithTag("Player").transform;
-                speed = 5;
+                sbTime = stuckBackposTime;
 
                 if (dist <= maximunDistanceToPlayer)
                 {
                     currentMode = AttackMode.idle;
-                    Debug.Log("idle");
+                    Debug.Log("NPC Rangda Bersiap Untuk Menyerang");
                 }
             }
             else if (currentMode == AttackMode.idle)
             {
-                target = GameObject.FindGameObjectWithTag("Player").transform;
+                if (GameObject.FindGameObjectWithTag("Player"))
+                    target = GameObject.FindGameObjectWithTag("Player").transform;
+                speed = 25;
 
                 rb.velocity = Vector2.zero;
 
@@ -115,13 +130,12 @@ public class EnemyAI_Leak : EnemyAI
                 aTime -= Time.deltaTime;
 
                 lastAttackPos.transform.position = target.transform.position;
-                speed = 25;
 
                 if (aTime <= 0)
                 {
                     currentMode = AttackMode.attack;
                     aTime = attackTimeWait;
-                    Debug.Log("attack");
+                    Debug.Log("NPC Rangda Menyerang Pemain");
                 }
             }
             else if (currentMode == AttackMode.attack)
@@ -129,7 +143,6 @@ public class EnemyAI_Leak : EnemyAI
                 attackAudio.SetActive(true);
                 moveAudio.SetActive(false);
                 tpAudio.SetActive(false);
-
 
                 target = lastAttackPos.transform;
 
@@ -139,6 +152,7 @@ public class EnemyAI_Leak : EnemyAI
                 {
                     target = returnPos;
                     saTime = stuckAttackTime;
+                    Debug.Log("NPC Rangda Kembali Ke Posisi Sebelumnya");
                 }
             }
         }
@@ -192,10 +206,6 @@ public class EnemyAI_Leak : EnemyAI
         Vector2 force = direction * speed;
 
         rb.AddForce(force);
-
-        //transform.position = Vector2.MoveTowards(transform.position, path.vectorPath[currentWaypoint], speed * Time.deltaTime);
-
-        //transform.position = Vector2.MoveTowards(transform.position, ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized, speed * Time.deltaTime);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 

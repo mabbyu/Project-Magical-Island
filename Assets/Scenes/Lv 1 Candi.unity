@@ -7745,8 +7745,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949523889}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 102.45, y: 25.59, z: 0}
-  m_LocalScale: {x: 2.5968442, y: 1.3783581, z: 1.3468839}
+  m_LocalPosition: {x: 102.45, y: 25.8674, z: 0}
+  m_LocalScale: {x: 2.5968442, y: 1.316332, z: 1.3468839}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 313278878}
@@ -16784,6 +16784,10 @@ PrefabInstance:
       propertyPath: stuckAttackTime
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 1630123716396517774, guid: c5f9eeaeac1bf2f4685af5819f05e271, type: 3}
+      propertyPath: stuckBackposTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1630123716396517775, guid: c5f9eeaeac1bf2f4685af5819f05e271, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -18922,6 +18926,7 @@ MonoBehaviour:
   buttonDonePanel: {fileID: 538824514}
   dialoguePanel: {fileID: 853363583}
   buttonDialoguePanel: {fileID: 1714578922}
+  allSfx: []
 --- !u!4 &2090680646
 Transform:
   m_ObjectHideFlags: 0

@@ -71,6 +71,7 @@ public class EnemyAI_Taksaka : EnemyAI
             if (dist <= maximunDistanceToPlayer)
             {
                 currentMode = AttackMode.attack;
+                Debug.Log("NPC Taksaka Menyerang Pemain");
             }
         }
         else if (currentMode == AttackMode.attack)
@@ -79,14 +80,14 @@ public class EnemyAI_Taksaka : EnemyAI
             moveAudio.SetActive(false);
 
             if (tShoot <= 0)
-            {
                 Shoot();
-            }
+
             rb.velocity = Vector2.zero;
 
             if (dist > maximunDistanceToPlayer)
             {
                 currentMode = AttackMode.chasing;
+                Debug.Log("NPC Taksaka Mengejar Pemain");
             }
         }
     }
@@ -126,10 +127,6 @@ public class EnemyAI_Taksaka : EnemyAI
         Vector2 force = direction * speed;
 
         rb.AddForce(force);
-
-        //transform.position = Vector2.MoveTowards(transform.position, path.vectorPath[currentWaypoint], speed * Time.deltaTime);
-
-        //transform.position = Vector2.MoveTowards(transform.position, ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized, speed * Time.deltaTime);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
