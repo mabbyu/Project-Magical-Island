@@ -214,13 +214,9 @@ public class EnemyAI_Leak : EnemyAI
 
         //EnemyGFX
         if (force.x >= 0.01f)
-        {
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
-        }
         else if (force.x <= -0.01f)
-        {
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
-        }
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, flyHigh, layerMaskToFly);
 
@@ -229,9 +225,7 @@ public class EnemyAI_Leak : EnemyAI
             if (hit.collider)
             {
                 if (hit.transform.tag == "Ground")
-                {
                     rb.AddForce(Vector2.up * flyForce);
-                }
             }
         }
     }

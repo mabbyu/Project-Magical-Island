@@ -81,6 +81,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   rb: {fileID: 0}
   speed: 10
+  facingRight: 1
   enemyGFX: {fileID: 742463410046583120}
   target: {fileID: 0}
   nextWaypointDistance: 3
@@ -96,7 +97,7 @@ MonoBehaviour:
   flyHigh: 3.5
   flyForce: 10
   timeToShoot: 2
-  amountBurst: 3
+  amountBurst: 2
   timeBetweenBurst: 0.5
   projectile: {fileID: 7176829465731709615, guid: 29f677b5a88f8974a843dcfc9f49e894, type: 3}
   shootSpeed: 350

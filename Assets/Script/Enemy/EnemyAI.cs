@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
     [Header("Move Info")]
     public float speed = 5;
     //public int facingDirection = 1;
-    //public bool facingRight = true;
+    public bool facingRight = true;
     public Transform enemyGFX;
     /*-------------------------------------------------------------*/
     [Header("A star Pathfinding")]
@@ -63,7 +63,7 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint = 0;
         }
     }
-    
+
     void FixedUpdate()
     {
         //Path
@@ -79,7 +79,7 @@ public class EnemyAI : MonoBehaviour
             reachedEndOfPath = false;
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force =  direction * speed;
+        Vector2 force = direction * speed;
 
         rb.AddForce(force);
 
@@ -94,6 +94,7 @@ public class EnemyAI : MonoBehaviour
         else if (force.x <= -0.01f)
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
     }
+
     public void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, maximunDistanceToPlayer);
