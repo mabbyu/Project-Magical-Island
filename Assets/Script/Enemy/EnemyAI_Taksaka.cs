@@ -28,7 +28,7 @@ public class EnemyAI_Taksaka : EnemyAI
     public GameObject attackAudio;
 
     [Header("Animation")]
-    private Animator anim;
+    public Animator anim;
     public Animator bodyAnim;
     public bool isShoot;
     public bool isVertical;
@@ -42,8 +42,6 @@ public class EnemyAI_Taksaka : EnemyAI
     void Start()
     {
         StartSFX();
-
-        anim = GetComponent<Animator>();
 
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
@@ -94,8 +92,8 @@ public class EnemyAI_Taksaka : EnemyAI
     private void AnimatorContoller()
     {
         anim.SetBool("isMove", currentMode == AttackMode.chasing);
-        bodyAnim.SetBool("isMoveVertical", isVertical);
         anim.SetBool("isAttack", isShoot);
+        bodyAnim.SetBool("isMoveVertical", isVertical);
     }
     
     private void OnTriggerEnter2D(Collider2D cld_trggr)

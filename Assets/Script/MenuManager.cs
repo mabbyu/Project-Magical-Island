@@ -14,7 +14,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private bool isMainMenu;
     public GameObject mainPanel;
     /*-------------------------------------------------------------*/
-    [Header("Credit Information")]
+    [Header("Level Panel")]
+    public GameObject levelPanel;
+    /*-------------------------------------------------------------*/
+    [Header("Information Panel")]
     public GameObject informationPanel;
     /*-------------------------------------------------------------*/
     [Header("Credit Panel")]
@@ -158,9 +161,15 @@ public class MenuManager : MonoBehaviour
 
         if (optionsPanel)
             optionsPanel.SetActive(true);
-
     }
 
+    public void ButtonLevel()
+    {
+        NotMainMenu();
+
+        if (levelPanel)
+            levelPanel.SetActive(true);
+    }
 
     //Paused in Game
     public void GamePause()
