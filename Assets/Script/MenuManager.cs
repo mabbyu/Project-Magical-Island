@@ -137,6 +137,7 @@ public class MenuManager : MonoBehaviour
             informationPanel.SetActive(false);
             creditPanel.SetActive(false);
             optionsPanel.SetActive(false);
+            levelPanel.SetActive(false);
         }
     }
     public void ButtonInformation()
