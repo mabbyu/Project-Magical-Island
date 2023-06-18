@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lv Akhir.unity
     guid: 56f0719060aa919458be91c563cd424e
+  - enabled: 1
+    path: Assets/Scenes/Tamat.unity
+    guid: e8d9273a4da610945bbb2b65d9753c3a
   m_configObjects: {}

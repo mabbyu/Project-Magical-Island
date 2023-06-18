@@ -9,6 +9,8 @@ public class Huggins : MonoBehaviour
     public bool isFlying;
     public bool isIdle;
 
+    public GameObject triggerObj;
+
     public Transform[] position;
     Transform nextPos;
     public int nextPosIndex;
@@ -34,11 +36,17 @@ public class Huggins : MonoBehaviour
         AnimatorController();
 
         if (isIdle)
+        {
+            triggerObj.SetActive(true);
             isFlying = false;
+        }
 
         if (isFlying)
+        {
+            triggerObj.SetActive(false);
             isIdle = false;
-
+        }
+            
         if (DialogueDisplay.instance.hugginsFlying)
             MoveGameObject();
 

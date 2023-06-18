@@ -102,11 +102,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFlying: 0
   isIdle: 1
+  triggerObj: {fileID: 2929871686753981358}
   position:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  nextPosIndex: 0
   flySpeed: 13
 --- !u!95 &2929871686169308510
 Animator:
@@ -225,6 +227,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95219d2a93962c419714bcb1d8309a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: {fileID: 0}
   dialogPanel: {fileID: 0}
-  interactAllowed: 0
