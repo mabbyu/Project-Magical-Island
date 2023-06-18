@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
     [Header("Move Info")]
     public float speed = 5;
     //public int facingDirection = 1;
-    public bool facingRight = true;
+    //public bool facingRight = true;
     public Transform enemyGFX;
     /*-------------------------------------------------------------*/
     [Header("A star Pathfinding")]
@@ -89,7 +89,7 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
 
         //EnemyGFX
-        if (force.x >= 0.01f)
+        if (force.x <= 0.01f)
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         else if (force.x <= -0.01f)
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);

@@ -22321,6 +22321,7 @@ MonoBehaviour:
   isMenu: 0
   isMainMenu: 0
   mainPanel: {fileID: 0}
+  levelPanel: {fileID: 0}
   informationPanel: {fileID: 0}
   creditPanel: {fileID: 0}
   optionsPanel: {fileID: 802675381}
@@ -22788,6 +22789,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 37134414491750441, guid: cb51a955616419242a4a8246a40a6c18, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 291244376897074288, guid: cb51a955616419242a4a8246a40a6c18, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 742463410046583120, guid: cb51a955616419242a4a8246a40a6c18, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -22833,6 +22842,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 742463410046583121, guid: cb51a955616419242a4a8246a40a6c18, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 2123839074}
+    - target: {fileID: 742463410046583121, guid: cb51a955616419242a4a8246a40a6c18, type: 3}
       propertyPath: speed
       value: 12
       objectReference: {fileID: 0}
@@ -22844,12 +22857,29 @@ PrefabInstance:
       propertyPath: returnPos
       value: 
       objectReference: {fileID: 2081961961}
+    - target: {fileID: 742463410046583121, guid: cb51a955616419242a4a8246a40a6c18, type: 3}
+      propertyPath: amountBurst
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 742463410046583121, guid: cb51a955616419242a4a8246a40a6c18, type: 3}
+      propertyPath: timeBetweenBurst
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 742463410046583147, guid: cb51a955616419242a4a8246a40a6c18, type: 3}
       propertyPath: m_Name
       value: NPC Taksaka
       objectReference: {fileID: 0}
+    - target: {fileID: 6711018317896147504, guid: cb51a955616419242a4a8246a40a6c18, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb51a955616419242a4a8246a40a6c18, type: 3}
+--- !u!95 &2123839074 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6711018317896147504, guid: cb51a955616419242a4a8246a40a6c18, type: 3}
+  m_PrefabInstance: {fileID: 2123839073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2130133397
 GameObject:
   m_ObjectHideFlags: 0

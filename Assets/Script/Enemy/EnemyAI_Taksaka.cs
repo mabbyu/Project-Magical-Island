@@ -33,6 +33,12 @@ public class EnemyAI_Taksaka : EnemyAI
     public bool isShoot;
     public bool isVertical;
 
+    public bool isRight;
+    public bool isLeft;
+
+    Vector2 moceDirection;
+    Vector2 moveForce;
+
     private void StartSFX()
     {
         moveAudio.SetActive(false);
@@ -56,6 +62,8 @@ public class EnemyAI_Taksaka : EnemyAI
 
     private void Update()
     {
+        if (path == null)
+            return;
         AnimatorContoller();
         
         var dist = Vector2.Distance(transform.position, target.position);
@@ -80,7 +88,7 @@ public class EnemyAI_Taksaka : EnemyAI
             if (tShoot <= 0)
                 Shoot();
 
-            rb.velocity = Vector2.zero;
+           
 
             if (dist > maximunDistanceToPlayer)
             {
@@ -88,6 +96,8 @@ public class EnemyAI_Taksaka : EnemyAI
                 Debug.Log("NPC Taksaka Mengejar Pemain");
             }
         }
+
+
     }
     private void AnimatorContoller()
     {
@@ -121,21 +131,19 @@ public class EnemyAI_Taksaka : EnemyAI
         else
             reachedEndOfPath = false;
 
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed;
+         moceDirection = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+         moveForce = moceDirection * speed;
 
-        rb.AddForce(force);
+        if (currentMode == AttackMode.chasing)
+            rb.AddForce(moveForce);
+        else
+           rb.velocity = Vector2.zero;
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
         if (distance < nextWaypointDistance)
             currentWaypoint++;
 
-        //EnemyGFX
-        if (force.x >= 0.01f)
-            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
-        else if (force.x <= -0.01f)
-            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, flyHigh, layerMaskToFly);
 
@@ -146,6 +154,19 @@ public class EnemyAI_Taksaka : EnemyAI
                 if (hit.transform.tag == "Ground")
                     rb.AddForce(Vector2.up * flyForce);
             }
+        }
+        //EnemyGFX
+        if((transform.position.x - target.transform.position.x) < 0)
+        {
+            isRight = true;
+            isLeft = false;
+            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+        }
+        else
+        {
+            isRight = false;
+            isLeft = true;
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
 
